@@ -79,3 +79,31 @@ void Second_order::Second_order_step(double t)
     std::cerr << t << " " << step << std::endl;
 
 }
+
+double NumDeriv::operator()(double x)
+{
+    double x_h = x; //use x+h
+    volatile double temp = x_h; //need for roundoff error
+    double h = temp != 0.0 ? prec * std::abs(temp) : prec ; //use x as curvature when calculate h
+    x_h = temp + h;
+    h = x_h - temp; //this is the machine precision trick
+
+    double f_xph = f(x_h);
+    double f_x = f(x);
+    double derivative = (f_xph - f_x) / h;
+    return derivative;
+}
+
+double NumDeriv::operator()(double x,double fx)
+{
+    double x_h = x; //use x+h
+    volatile double temp = x_h; //need for roundoff error
+    double h = temp != 0.0 ? prec * std::abs(temp) : prec ; //use x as curvature when calculate h
+    x_h = temp + h;
+    h = x_h - temp; //this is the machine precision trick
+
+    double f_xph = f(x_h);
+    double f_x = fx;
+    double derivative = (f_xph - f_x) / h;
+    return derivative;
+}

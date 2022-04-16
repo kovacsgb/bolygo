@@ -3,7 +3,8 @@
 
 #include <vector>
 #include <iostream>
-
+#include <cmath>
+#include <limits>
 
 
 typedef double Dvar;
@@ -12,6 +13,10 @@ struct Function
      virtual void operator()(std::vector<double> y, std::vector<double> &dy, double t) = 0;
 };
 
+struct AlgebraicFunction
+{
+    virtual double operator()(double x) = 0;
+};
 
 class ODE_solver{
 /* Second order Runge-Kutta Solver
@@ -53,5 +58,33 @@ class Second_order : public ODE_solver
     {}
 
 };
+
+struct NumDeriv
+/*
+ * Functor calculating numerical derivative.
+ * Error of the derivative calculation is sqrt(epsilon_m)*x_c ~ 1e-8 * x
+ * Better error can be achieved by more function evaulation;
+ */
+{
+    AlgebraicFunction& f;
+    const double prec;
+
+    NumDeriv(AlgebraicFunction& f_) : f(f_), prec(calc_prec<double>()) {}
+
+    double operator()(double x);
+    //Retun df/dx at x
+    double operator()(double x, double fx);
+    //Return df/dx with single function evaulation.
+
+    private:
+    template<class T>
+    double calc_prec()
+    {
+        double machine_precision = std::numeric_limits<T>::epsilon();
+        return std::sqrt(machine_precision);
+    }
+
+};
+
 
 #endif

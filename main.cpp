@@ -19,6 +19,15 @@ class Test_func : public Function{
 
 };
 
+struct test_Algebraic : public AlgebraicFunction
+{
+    double operator()(double t)
+    {
+        return std::sin(t);
+    }
+};
+
+
 
 int main()
 {
@@ -37,5 +46,17 @@ int main()
    
     Second_order midpoint(test,x0,0,10,0.01);
     midpoint();
+    cout << endl;
+
+    double t=30*M_PI;
+    test_Algebraic tester;
+    NumDeriv df(tester);
+    while(t < 34* M_PI)
+    {
+        cout << t << " " << tester(t) << " " << df(t,tester(t)) << " " << df(t) - std::cos(t) << endl; 
+    t+=0.01;
+    }
+
+
     return 0;
 }
