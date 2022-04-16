@@ -87,4 +87,28 @@ struct NumDeriv
 };
 
 
+
+class NewtonRaphson
+/*
+    Newton-Raphson iterator with bisection method as safeguard.
+    In the original problem we have only 1 variable M_env which is not known in the outer edge of the planet, since R is dependent on M_tot.
+    In this case we only need 1D newton iterator.
+*/
+{
+    private:
+    const int MAX_IT = 200;
+    const double EPS = std::sqrt(std::numeric_limits<double>::epsilon()); //maybe this will be better //I am not sure this will be good, if error in df is sqrt(EPS).
+    AlgebraicFunction& f;
+    NumDeriv df;
+
+    double f_square();
+
+
+    public:
+    NewtonRaphson(AlgebraicFunction& f_) : f(f_), df(f_) {}
+
+    double operator()(double start,const double x1, const double x2);
+
+};
+
 #endif

@@ -27,6 +27,14 @@ struct test_Algebraic : public AlgebraicFunction
     }
 };
 
+struct Newton_test : public AlgebraicFunction
+{
+    double operator()(double x)
+    {
+        return x*x*x-2;
+    }
+};
+
 
 
 int main()
@@ -57,6 +65,10 @@ int main()
     t+=0.01;
     }
 
+    Newton_test tester2;
+    NewtonRaphson iterator{tester2};
+
+    cout << iterator(1.5,1,2);
 
     return 0;
 }

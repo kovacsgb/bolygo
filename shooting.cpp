@@ -107,3 +107,59 @@ double NumDeriv::operator()(double x,double fx)
     double derivative = (f_xph - f_x) / h;
     return derivative;
 }
+
+
+double NewtonRaphson::operator()(double start, const double x1, const double x2)
+{
+    double xh,xl;
+    double x = start;
+    double f1=f(x1);
+    double f2=f(x2);
+    if ((f1 > 0.0 && f2 > 0.0) || (f1 <0.0 && f2 < 0.0)) throw ("Solution must be bracketed between x1,x2");
+    if (f1 == 0.0) return x1;
+    if (f2 == 0.0) return x2;
+    if (f1 < 0.0)
+    {
+        xl=x1; xh = x2;
+    }
+    else
+    {
+        xh=x1; xl = x2;
+    }
+    double origrange = std::abs(x2-x1);
+    double dx = origrange;
+    double fx = f(start);
+    double dfx = df(start,fx);
+
+    for(int i=0;i<MAX_IT;i++)
+    {
+        //if out of range bisect:
+        if ((((x-xh)*dfx-fx)*((x-xl)*dfx-fx)> 0) || (std::abs(2*fx) > std::abs(origrange*dfx)))
+        {
+            origrange = dx;
+            dx = 0.5*(xh-xl);
+            x = xl+dx;
+            if(xl == x) return x;
+        }
+        else
+        {
+            origrange = dx;
+            dx = fx/dfx;
+            double temp = x;
+            x -= dx;
+            if(temp == x) return x;
+        }
+        if (std::abs(dx) < EPS) return x;
+        fx =f(x);
+        dfx=df(x,fx);
+        if(fx < 0)
+        {
+            xl=x;
+        }
+        else
+        {
+            xh = x;
+        }
+    }
+
+}
