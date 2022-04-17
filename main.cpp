@@ -1,4 +1,5 @@
 #include <iostream>
+#include<iomanip>
 #include "shooting.hpp"
 
 class Test_func : public Function{
@@ -35,6 +36,33 @@ struct Newton_test : public AlgebraicFunction
     }
 };
 
+struct test_score : public MultiVariable
+{
+    double x2;
+
+    test_score(double x2_) : x2(x2_) {}
+
+    double operator()(double t)
+    {
+        return 0;
+    }
+
+    double operator()(double t, std::vector<double> y)
+    {
+        return x2-y[0];
+    }
+
+};
+
+struct test_init : public Function
+{
+    void operator()(std::vector<double> y,std::vector<double> &dy, double t)
+    {
+        dy[0]=y[0];
+        dy[1]=0;
+    }
+};
+
 
 
 int main()
@@ -68,7 +96,30 @@ int main()
     Newton_test tester2;
     NewtonRaphson iterator{tester2};
 
-    cout << iterator(1.5,1,2);
+    cout << setprecision(10) << iterator(1.5,1,2);
+    cout << endl << endl;
+
+    test_init Load;
+    test_score Score(2);
+    Shooting_method shoot(2,0,2*M_PI,Load,test,Score);
+
+    NewtonRaphson Shooter{shoot};
+    cout << endl << "#--------------" << endl;
+
+    double y0;
+    try{
+
+    y0 = Shooter(1,0.1,3);
+    }
+    catch(string ex)
+    {
+        cout << ex; 
+    }
+
+    cout << endl << "#--------" << endl;
+    cout << y0;
+
+
 
     return 0;
 }

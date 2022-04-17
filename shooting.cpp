@@ -161,5 +161,18 @@ double NewtonRaphson::operator()(double start, const double x1, const double x2)
             xh = x;
         }
     }
+    throw("No convergence");
+}
 
+double Shooting_method::operator()(double x)
+{
+    //--------------
+    y[0] = x;
+    double h1 = 0.01;//(t2-t1)/200.0;
+    InitCalc(y,dy,t1);
+    y=dy;
+    Second_order integ(RHS,y,t1,t2,h1);
+    y = integ();
+    return Score(t2,y);
+    //---------------
 }

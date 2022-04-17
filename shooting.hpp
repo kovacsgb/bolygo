@@ -18,6 +18,11 @@ struct AlgebraicFunction
     virtual double operator()(double x) = 0;
 };
 
+struct MultiVariable : public AlgebraicFunction
+{
+    virtual double operator()(double t, std::vector<double> x)= 0;
+};
+
 class ODE_solver{
 /* Second order Runge-Kutta Solver
  * k1=h*f(x_n,y_n) 
@@ -101,7 +106,6 @@ class NewtonRaphson
     AlgebraicFunction& f;
     NumDeriv df;
 
-    double f_square();
 
 
     public:
@@ -109,6 +113,22 @@ class NewtonRaphson
 
     double operator()(double start,const double x1, const double x2);
 
+};
+
+struct Shooting_method : public AlgebraicFunction
+{
+    double t1,t2;
+    std::vector<double> init_vals;
+    std::vector<double> y;
+    std::vector<double> dy;
+    Function& RHS;
+    Function& InitCalc;
+    MultiVariable& Score;
+
+    Shooting_method(int n, double t1_, double t2_, Function& InitCalc_, Function& RHS_, MultiVariable& Score_) :
+     t1(t1_),t2(t2_), init_vals(n), y(n), dy(n), RHS(RHS_), InitCalc(InitCalc_), Score(Score_) {}
+
+    double operator()(double x);
 };
 
 #endif
