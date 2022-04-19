@@ -2,6 +2,16 @@
 #include<iomanip>
 #include "shooting.hpp"
 
+
+const double M_EARTH = 5.97216787e+27; // g
+
+template<class T>
+inline T toFour(T x)
+{
+    return x*x*x*x;
+}
+
+
 class Test_func : public Function{
     private:
     double D;
@@ -64,6 +74,34 @@ struct test_init : public Function
 };
 
 
+struct adiabatikus : public Function
+{
+    const double GRAVI_CONST = 6.674299999999999e-08;// in cgs -> cm3/gs2
+    double const K = 3.85e15; // maybe and for the Sun, probably not the perfect.
+    double const gamma = 1/(5./3.);
+    double rho;
+
+
+    void operator()(std::vector<double> y, std::vector<double> &dy, double t)
+    {
+        // dP/dM = - G M / 4 pi r^4
+        // dr/dM = 1/4pi r^2 rho
+        // P = K rho^gamma => rho = (P/K)^(1/gamma)
+        double m = t;
+        double P = y[0];
+        double r = y[1];
+
+        double dPdM = - ( GRAVI_CONST * m ) / (4 * M_PI * toFour(r));
+        double drdM = 1 / (4* M_PI * r*r * rho);
+
+        rho = std::pow( P / K, gamma);
+
+        dy[0] = dPdM;
+        dy[1] = drdM;
+    }  
+};
+
+
 
 int main()
 {
@@ -119,7 +157,26 @@ int main()
     cout << endl << "#--------" << endl;
     cout << y0;
 
+    cout << endl << endl;
 
+    //Here we try out bolygo
+
+    double rho_neb=1e-11;
+    double M_core = 1* M_EARTH;
+    double r_core = std::pow((3*M_core / (4.* M_PI*5.5)),1./3.); //cm
+
+    double M_env_guess = 800*M_EARTH;
+    double M_tot = M_core+ M_env_guess;
+
+    adiabatikus bolygo;
+    bolygo.rho = rho_neb;
+    double c_s = 148910;
+    double R = bolygo.GRAVI_CONST * M_tot / (c_s*c_s);
+    cerr << "#------------------" << endl;
+    cerr << "M_tot=" << M_tot << " R=" << R << " r_core= " << r_core << " M_core= " << M_core << endl;
+
+    Second_order tryit(bolygo,{bolygo.K*std::pow(rho_neb,5./3.),R},M_tot,M_core,-(M_tot-M_core)/1e4);
+    tryit(ODE_solver::direction::BACKWARD);
 
     return 0;
 }

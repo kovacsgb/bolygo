@@ -8,7 +8,26 @@ std::vector<double> ODE_solver::operator()(std::vector<double> new_y0)
 }
 
 
+std::vector<double> ODE_solver::operator()(ODE_solver::direction where)
+{
+    switch(where)
+    {
+        case direction::FORWARD: return (*this)(); break;
+        case direction::BACKWARD:
+            double t=start;
+            yval = y0;
+            std::cerr << t << std::endl;
+            while (t >= end)
+            {
+                this->solv_step(t);
+                t+=step;
+            }
 
+            
+            return yval;
+            break;
+    }
+}
 
  std::vector<double> ODE_solver::operator()()
 {
@@ -41,6 +60,8 @@ void ODE_solver::solv_step(double t)
 
     for(size_t i=0;i<yval.size();i++) yval[i] += step*dy[i];
 }
+
+
 
 
 void Second_order::solv_step(double t)

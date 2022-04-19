@@ -43,12 +43,16 @@ class ODE_solver{
     virtual void solv_step(double t);
 
     public:
+    enum direction { FORWARD, BACKWARD};
     ODE_solver(); //contructor
     ODE_solver(Function& f_, std::vector<double> y0_,double start_,double end_,double step_) :
      yval(y0_.size()), y0(y0_), dy(y0_.size()), var(start_), start(start_), end(end_), step(step_), f(f_) {}
 
     std::vector<double> operator()();
     std::vector<double> operator()(std::vector<double> new_y0);
+    std::vector<double> operator()(direction where);
+
+    
 
 };
 
