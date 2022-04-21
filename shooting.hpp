@@ -68,6 +68,26 @@ class Second_order : public ODE_solver
 
 };
 
+class RK4 : public ODE_solver
+{
+    std::vector<double> k1;
+    std::vector<double> k2;
+    std::vector<double> k3;
+    std::vector<double> k4;
+    std::vector<double> temp;
+
+    void solv_step(double t);
+    void RK4_step(double t);
+
+    public:
+    RK4(Function& f_, std::vector<double> y0_,double start_,double end_,double step_) : 
+    ODE_solver(f_,y0_,start_,end_,step_),  k1(y0_.size()), k2(y0_.size()), k3(y0_.size()),
+    k4(y0_.size()), temp(y0_.size())
+    {}
+
+
+};
+
 struct NumDeriv
 /*
  * Functor calculating numerical derivative.

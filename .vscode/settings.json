@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.plt": "gnuplot",
         "array": "cpp",
         "atomic": "cpp",
         "*.tcc": "cpp",
@@ -42,6 +43,12 @@
         "iterator": "cpp",
         "memory_resource": "cpp",
         "random": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "bit": "cpp",
+        "chrono": "cpp",
+        "ctime": "cpp",
+        "ratio": "cpp",
+        "iomanip": "cpp",
+        "thread": "cpp"
     }
 }

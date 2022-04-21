@@ -84,23 +84,47 @@ struct adiabatikus : public Function
 
     void operator()(std::vector<double> y, std::vector<double> &dy, double t)
     {
-        // dP/dM = - G M / 4 pi r^4
-        // dr/dM = 1/4pi r^2 rho
-        // P = K rho^gamma => rho = (P/K)^(1/gamma)
+        // dP/dM = - G M / 4 pi r^450.5736	0^(1/gamma)
         double m = t;
         double P = y[0];
         double r = y[1];
+        rho = std::pow( P / K, gamma);
 
         double dPdM = - ( GRAVI_CONST * m ) / (4 * M_PI * toFour(r));
         double drdM = 1 / (4* M_PI * r*r * rho);
 
-        rho = std::pow( P / K, gamma);
+        
 
         dy[0] = dPdM;
         dy[1] = drdM;
     }  
 };
 
+struct adiabatikus2 : public Function
+{
+    const double GRAVI_CONST = 6.674299999999999e-08;// in cgs -> cm3/gs2
+    double const K = 2e13;//3.85e15; // maybe and for the Sun, probably not the perfect.
+    double const gamma = 1/(5./3.);
+    double rho;
+
+
+    void operator()(std::vector<double> y, std::vector<double> &dy, double t)
+    {
+        // dP/dM = - G M / 4 pi r^450.5736	0^(1/gamma)
+        double r = t;
+        double P = y[0];
+        double m = y[1];
+        rho = std::pow( P / K, gamma);
+
+        //double dPdM = - ( GRAVI_CONST * m ) / (4 * M_PI * toFour(r));
+        //double drdM = 1 / (4* M_PI * r*r * rho);
+        double dPdr = - GRAVI_CONST * m  * rho / (r*r);
+        double dmdr = 4* M_PI * r*r* rho;
+
+        dy[0] = dPdr;
+        dy[1] = dmdr;
+    }  
+};
 
 
 int main()
@@ -162,20 +186,21 @@ int main()
     //Here we try out bolygo
 
     double rho_neb=1e-11;
-    double M_core = 1* M_EARTH;
+    double M_core = 5* M_EARTH;
     double r_core = std::pow((3*M_core / (4.* M_PI*5.5)),1./3.); //cm
 
-    double M_env_guess = 800*M_EARTH;
+    double M_env_guess = 1*M_EARTH;
     double M_tot = M_core+ M_env_guess;
 
-    adiabatikus bolygo;
+    adiabatikus2 bolygo;
     bolygo.rho = rho_neb;
     double c_s = 148910;
     double R = bolygo.GRAVI_CONST * M_tot / (c_s*c_s);
     cerr << "#------------------" << endl;
     cerr << "M_tot=" << M_tot << " R=" << R << " r_core= " << r_core << " M_core= " << M_core << endl;
 
-    Second_order tryit(bolygo,{bolygo.K*std::pow(rho_neb,5./3.),R},M_tot,M_core,-(M_tot-M_core)/1e4);
+    //RK4 tryit(bolygo,{bolygo.K*std::pow(rho_neb,5./3.),R},M_tot,M_core,-(M_tot-M_core)/1e9);
+    Second_order tryit(bolygo,{bolygo.K*std::pow(rho_neb,5./3.),M_tot},R,r_core,-(R-r_core)/1e3);
     tryit(ODE_solver::direction::BACKWARD);
 
     return 0;

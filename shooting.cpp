@@ -101,6 +101,44 @@ void Second_order::Second_order_step(double t)
 
 }
 
+void RK4::solv_step(double t)
+{
+    std::cout << t << " ";
+    for(auto&& y : yval)
+    {
+        std::cout << y << " ";
+    }
+    for(auto&& y: k1)
+    {
+        std::cout << y << " ";
+    }
+    std::cout << std::endl;
+    RK4_step(t);
+}
+
+void RK4::RK4_step(double t)
+{
+    double h2 = 0.5*step;
+    double h6 = step/6.0;
+    double tph = t + h2;
+    //calc k1
+    f(yval,k1,t);
+    //calc k2
+    for(auto i=0; i< temp.size();i++) temp[i] = yval[i] + h2*k1[i];
+    f(temp,k2,tph);
+    //calc k3
+    for(auto i=0; i<temp.size();i++) temp[i] = yval[i] + h2*k2[i];
+    f(temp,k3,tph);
+    //calc k4
+    for(auto i=0; i<temp.size();i++) temp[i] = yval[i] + step* k3[i];
+    f(temp,k4,t+step);
+    //accumulate
+    for(auto i=0; i<yval.size();i++)
+        yval[i] += h6 * (k1[i] + k4[i] + 2*(k2[i]+k3[i]));
+
+}
+
+
 double NumDeriv::operator()(double x)
 {
     double x_h = x; //use x+h
