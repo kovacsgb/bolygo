@@ -152,7 +152,7 @@ struct Shooting_method : public AlgebraicFunction
     Shooting_method(int n, double t1_, double t2_, Function& InitCalc_, Function& RHS_, MultiVariable& Score_) :
      t1(t1_),t2(t2_), init_vals(n), y(n), dy(n), RHS(RHS_), InitCalc(InitCalc_), Score(Score_) {}
 
-    double operator()(double x);
+    virtual double operator()(double x);
 };
 
 #endif

@@ -174,7 +174,10 @@ double NewtonRaphson::operator()(double start, const double x1, const double x2)
     double x = start;
     double f1=f(x1);
     double f2=f(x2);
-    if ((f1 > 0.0 && f2 > 0.0) || (f1 <0.0 && f2 < 0.0)) throw ("Solution must be bracketed between x1,x2");
+    if ((f1 > 0.0 && f2 > 0.0) || (f1 <0.0 && f2 < 0.0))
+     throw (std::string{"Solution must be bracketed between x1,x2 but:"}+std::to_string(x1) + "->"+
+     std::to_string(f1)+"\n " +
+     std::to_string(f2)+ "->" + std::to_string(f2));
     if (f1 == 0.0) return x1;
     if (f2 == 0.0) return x2;
     if (f1 < 0.0)
@@ -208,7 +211,7 @@ double NewtonRaphson::operator()(double start, const double x1, const double x2)
             x -= dx;
             if(temp == x) return x;
         }
-        if (std::abs(dx) < EPS) return x;
+        if (std::abs(dx/x) < EPS) return x;
         fx =f(x);
         dfx=df(x,fx);
         if(fx < 0)
@@ -227,7 +230,7 @@ double Shooting_method::operator()(double x)
 {
     //--------------
     y[0] = x;
-    double h1 = 0.01;//(t2-t1)/200.0;
+    double h1 = (t2-t1)/1e3;
     InitCalc(y,dy,t1);
     y=dy;
     Second_order integ(RHS,y,t1,t2,h1);

@@ -1,5 +1,6 @@
 #include <iostream>
 #include<iomanip>
+#include<fstream>
 #include "shooting.hpp"
 
 
@@ -78,7 +79,7 @@ struct adiabatikus : public Function
 {
     const double GRAVI_CONST = 6.674299999999999e-08;// in cgs -> cm3/gs2
     double const K = 3.85e15; // maybe and for the Sun, probably not the perfect.
-    double const gamma = 1/(5./3.);
+    double const gamma = 1/(6./5.);
     double rho;
 
 
@@ -104,7 +105,7 @@ struct adiabatikus2 : public Function
 {
     const double GRAVI_CONST = 6.674299999999999e-08;// in cgs -> cm3/gs2
     double const K = 2e13;//3.85e15; // maybe and for the Sun, probably not the perfect.
-    double const gamma = 1/(5./3.);
+    double const gamma = 1/(1.5/0.5);
     double rho;
 
 
@@ -124,6 +125,83 @@ struct adiabatikus2 : public Function
         dy[0] = dPdr;
         dy[1] = dmdr;
     }  
+};
+
+struct adiabatikus_score : public MultiVariable
+{
+    double M_core;
+
+    adiabatikus_score(double x2_) : M_core(x2_) {}
+
+    double operator()(double t)
+    {
+        return 0;
+    }
+
+    double operator()(double t, std::vector<double> y)
+    {
+        return M_core-y[1];
+    }
+
+};
+
+struct Function2 : public Function
+{
+    virtual void operator()(std::vector<double> y,std::vector<double> &dy, double t) {}
+    virtual double operator()(std::vector<double> y,std::vector<double> &dy, double* t) {return 0;}
+};
+
+struct adiabatikus_init : public Function2
+{
+    const double GRAVI_CONST = 6.674299999999999e-08;
+    double rho_neb;
+    double M_core;
+    double c_s;
+    double R;
+
+    adiabatikus_init(double rho_neb_, double M_core_,double c_s_) : rho_neb(rho_neb_),M_core(M_core_), c_s(c_s_) {}
+    
+    
+    double operator()(std::vector<double> y,std::vector<double> &dy, double* t)
+    {
+
+        dy[0]=rho_neb; //actually P_neb
+        std::cerr << "Szia uram!" << std::endl;
+        dy[1]=M_core+y[1];
+        R=GRAVI_CONST *(M_core+y[1])/(c_s*c_s);
+        *t=R;
+        return R;
+    }
+};
+
+
+
+
+struct Shooting2 : public Shooting_method
+{
+
+    Function2& InitCalc2;
+    std::ofstream log;
+
+    Shooting2(int n, double t1_, double t2_, Function2& InitCalc_, Function& RHS_, MultiVariable& Score_) :
+    Shooting_method(n,t1_,t2_,InitCalc_,RHS_,Score_), InitCalc2(InitCalc_), log("log"){}
+
+    double operator()(double x)
+{
+    //--------------
+    y[1] = x;
+    dy[1] = 1000;
+    //static_cast<double (&)(std::vector<double>,std::vector<double> &, double&)>(InitCalc.operator())(y,dy,t1);
+    InitCalc2(y,dy,&t1);
+    double h1 = (t2-t1)/1e3;
+    log << t1 <<" " << t2 << " " << h1 << " " << dy[1] << " " << y[1] <<" " << x << std::endl;
+    y=dy;
+    Second_order integ(RHS,y,t1,t2,h1);
+    y = integ(ODE_solver::direction::BACKWARD);
+    return Score(t2,y);
+    //---------------
+}
+
 };
 
 
@@ -200,7 +278,32 @@ int main()
     cerr << "M_tot=" << M_tot << " R=" << R << " r_core= " << r_core << " M_core= " << M_core << endl;
 
     //RK4 tryit(bolygo,{bolygo.K*std::pow(rho_neb,5./3.),R},M_tot,M_core,-(M_tot-M_core)/1e9);
-    Second_order tryit(bolygo,{bolygo.K*std::pow(rho_neb,5./3.),M_tot},R,r_core,-(R-r_core)/1e3);
+    Second_order tryit_old(bolygo,{bolygo.K*std::pow(rho_neb,5./3.),M_tot},R,r_core,-(R-r_core)/1e3);
+    tryit_old(ODE_solver::direction::BACKWARD);
+
+    adiabatikus_init tester_adiab{bolygo.K*std::pow(rho_neb,5.5/4.5),M_core,c_s};
+    adiabatikus_score tester_adiab_score{M_core};
+
+    Shooting2 tester_adiab_shoot{2,R,r_core,tester_adiab,bolygo,tester_adiab_score};
+    
+    NewtonRaphson tester_adiab_newton{tester_adiab_shoot};
+
+    try
+    {
+        M_env_guess = tester_adiab_newton(50 * M_EARTH, 1e-5 * M_EARTH , 500 * M_EARTH);
+    }
+    catch(char const * e)
+    {
+        std::cerr << e << endl;
+        return 0;
+    }
+    catch(string e)
+    {
+        std::cerr << e << endl;
+        return 0;
+    }
+    M_tot=M_core+M_env_guess;
+    Second_order tryit(bolygo,{bolygo.K*std::pow(rho_neb,5./4.),M_tot},R,r_core,-(R-r_core)/1e3);
     tryit(ODE_solver::direction::BACKWARD);
 
     return 0;
