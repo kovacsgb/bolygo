@@ -16,14 +16,14 @@ std::vector<double> ODE_solver::operator()(ODE_solver::direction where)
         case direction::BACKWARD:
             double t=start;
             yval = y0;
-            std::cerr << t << std::endl;
+           // std::cerr << t << std::endl;
             while (t >= end)
             {
                 this->solv_step(t);
                 t+=step;
             }
 
-            
+            output << std::endl;
             return yval;
             break;
     }
@@ -33,7 +33,7 @@ std::vector<double> ODE_solver::operator()(ODE_solver::direction where)
 {
     double t=start;
     yval = y0;
-    std::cerr << t << std::endl;
+   // std::cerr << t << std::endl;
     while (t <= end)
     {
         this->solv_step(t);
@@ -66,16 +66,16 @@ void ODE_solver::solv_step(double t)
 
 void Second_order::solv_step(double t)
 {
-    std::cout << t << " ";
+    output << t << " ";
     for(auto&& y : yval)
     {
-        std::cout << y << " ";
+        output << y << " ";
     }
     for(auto&& y: dy)
     {
-        std::cout << y << " ";
+        output << y << " ";
     }
-    std::cout << std::endl;
+    output << std::endl;
     Second_order_step(t);
 }
 
@@ -86,18 +86,18 @@ void Second_order::Second_order_step(double t)
     //dy = k1;
     //for(size_t i=0;i<yval.size();i++) k1[i] *= step;
     for(size_t i=0; i< yval.size();i++) k1[i] = yval[i] + 0.5*step*k1[i];
-    std::cerr << "y" << yval[0] << " " << yval[1] << " y+0.5*k1: ";
-    for(auto &&k : k1) std::cerr << k << " ";
+    //std::cerr << "y" << yval[0] << " " << yval[1] << " y+0.5*k1: ";
+    //for(auto &&k : k1) std::cerr << k << " ";
 
     //Calculate k2 := dy
     f(k1,dy,t+0.5*step);
-    std::cerr << "k2= ";
-    for(auto &&k : dy) std::cerr << k << " ";
+   // std::cerr << "k2= ";
+   // for(auto &&k : dy) std::cerr << k << " ";
     
     for(size_t i=0; i< yval.size();i++) yval[i] += step*dy[i];
-    std::cerr << "new_y: ";
-    for(auto &&k : yval) std::cerr << k << " ";
-    std::cerr << t << " " << step << std::endl;
+    //std::cerr << "new_y: ";
+   // for(auto &&k : yval) std::cerr << k << " ";
+  //  std::cerr << t << " " << step << std::endl;
 
 }
 
@@ -195,12 +195,15 @@ double NewtonRaphson::operator()(double start, const double x1, const double x2)
 
     for(int i=0;i<MAX_IT;i++)
     {
+        std::cerr << "step: " << i << " x=" << x << " fx=" << fx << " dfx=" << dfx << " dx= " << dx << std::endl; 
         //if out of range bisect:
         if ((((x-xh)*dfx-fx)*((x-xl)*dfx-fx)> 0) || (std::abs(2*fx) > std::abs(origrange*dfx)))
         {
+            std::cerr << "We have get out of range, do a bisect step to:"; 
             origrange = dx;
             dx = 0.5*(xh-xl);
             x = xl+dx;
+            std::cerr << x  << std::endl;
             if(xl == x) return x;
         }
         else
@@ -222,6 +225,7 @@ double NewtonRaphson::operator()(double start, const double x1, const double x2)
         {
             xh = x;
         }
+        std::cerr << "New limits are:" << xl << " " << xh << std::endl; 
     }
     throw("No convergence");
 }

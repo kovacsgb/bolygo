@@ -3,6 +3,8 @@
 
 #include <vector>
 #include <iostream>
+#include <iomanip>
+#include <fstream>
 #include <cmath>
 #include <limits>
 
@@ -44,9 +46,10 @@ class ODE_solver{
 
     public:
     enum direction { FORWARD, BACKWARD};
+    std::ostream& output;
     ODE_solver(); //contructor
     ODE_solver(Function& f_, std::vector<double> y0_,double start_,double end_,double step_) :
-     yval(y0_.size()), y0(y0_), dy(y0_.size()), var(start_), start(start_), end(end_), step(step_), f(f_) {}
+     yval(y0_.size()), y0(y0_), dy(y0_.size()), var(start_), start(start_), end(end_), step(step_), f(f_), output(std::cout){}
 
     std::vector<double> operator()();
     std::vector<double> operator()(std::vector<double> new_y0);

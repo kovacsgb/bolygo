@@ -104,8 +104,8 @@ struct adiabatikus : public Function
 struct adiabatikus2 : public Function
 {
     const double GRAVI_CONST = 6.674299999999999e-08;// in cgs -> cm3/gs2
-    double const K = 2e13;//3.85e15; // maybe and for the Sun, probably not the perfect.
-    double const gamma = 1/(1.5/0.5);
+    double const K = 3.85e12*0.5; // maybe and for the Sun, probably not the perfect.
+    double gamma = 1/(4./3.);
     double rho;
 
 
@@ -166,7 +166,7 @@ struct adiabatikus_init : public Function2
     {
 
         dy[0]=rho_neb; //actually P_neb
-        std::cerr << "Szia uram!" << std::endl;
+      //  std::cerr << "Szia uram!" << std::endl;
         dy[1]=M_core+y[1];
         R=GRAVI_CONST *(M_core+y[1])/(c_s*c_s);
         *t=R;
@@ -197,7 +197,21 @@ struct Shooting2 : public Shooting_method
     log << t1 <<" " << t2 << " " << h1 << " " << dy[1] << " " << y[1] <<" " << x << std::endl;
     y=dy;
     Second_order integ(RHS,y,t1,t2,h1);
+    try{
     y = integ(ODE_solver::direction::BACKWARD);
+    for (auto &&ye : y) std::cerr << ye;
+    std::cerr << std::endl;
+    for (auto &&ye : y) if (std::isnan(ye)) throw(0); 
+    }
+    catch(int e)
+    {
+        std::cerr << "One member of y is NAN! Write dump file.";
+        std::ofstream dump{"dump"};
+        integ.output.rdbuf(dump.rdbuf());
+        integ(ODE_solver::direction::BACKWARD);
+        throw("Not a Number error");
+    }
+
     return Score(t2,y);
     //---------------
 }
@@ -264,7 +278,7 @@ int main()
     //Here we try out bolygo
 
     double rho_neb=1e-11;
-    double M_core = 5* M_EARTH;
+    double M_core = 10* M_EARTH;
     double r_core = std::pow((3*M_core / (4.* M_PI*5.5)),1./3.); //cm
 
     double M_env_guess = 1*M_EARTH;
@@ -277,11 +291,12 @@ int main()
     cerr << "#------------------" << endl;
     cerr << "M_tot=" << M_tot << " R=" << R << " r_core= " << r_core << " M_core= " << M_core << endl;
 
+    
     //RK4 tryit(bolygo,{bolygo.K*std::pow(rho_neb,5./3.),R},M_tot,M_core,-(M_tot-M_core)/1e9);
-    Second_order tryit_old(bolygo,{bolygo.K*std::pow(rho_neb,5./3.),M_tot},R,r_core,-(R-r_core)/1e3);
+    Second_order tryit_old(bolygo,{bolygo.K*std::pow(rho_neb,4.5/3.5),M_tot},R,r_core,-(R-r_core)/1e3);
     tryit_old(ODE_solver::direction::BACKWARD);
 
-    adiabatikus_init tester_adiab{bolygo.K*std::pow(rho_neb,5.5/4.5),M_core,c_s};
+    adiabatikus_init tester_adiab{rho_neb*c_s*c_s,M_core,c_s};
     adiabatikus_score tester_adiab_score{M_core};
 
     Shooting2 tester_adiab_shoot{2,R,r_core,tester_adiab,bolygo,tester_adiab_score};
@@ -290,7 +305,7 @@ int main()
 
     try
     {
-        M_env_guess = tester_adiab_newton(50 * M_EARTH, 1e-5 * M_EARTH , 500 * M_EARTH);
+        M_env_guess = tester_adiab_newton(1 * M_EARTH, 1e-6 * M_EARTH , 15 * M_EARTH);
     }
     catch(char const * e)
     {
@@ -303,8 +318,29 @@ int main()
         return 0;
     }
     M_tot=M_core+M_env_guess;
-    Second_order tryit(bolygo,{bolygo.K*std::pow(rho_neb,5./4.),M_tot},R,r_core,-(R-r_core)/1e3);
+    R= bolygo.GRAVI_CONST * M_tot / (c_s*c_s);
+    Second_order tryit(bolygo,{rho_neb*c_s*c_s,M_tot},R,r_core,-(R-r_core)/3e3);
     tryit(ODE_solver::direction::BACKWARD);
+
+
+/*
+    std::ofstream Fxtest{"Fxtest"};
+
+    M_env_guess= -1 * M_EARTH + 1e-5 * M_EARTH;
+    bolygo.gamma=1/(4./3.);
+    while (M_env_guess < 2 * M_EARTH)
+    {
+        M_tot=M_core+M_env_guess;
+        R= bolygo.GRAVI_CONST * M_tot / (c_s*c_s);
+        //Second_order test_bolygo(bolygo,{bolygo.K*std::pow(rho_neb,1/bolygo.gamma),M_tot},R,r_core,-(R-r_core)/1e3);
+        Second_order test_bolygo(bolygo,{rho_neb*c_s*c_s,M_tot},R,r_core,-(R-r_core)/5e3);
+        auto y = test_bolygo(ODE_solver::direction::BACKWARD);
+        Fxtest << M_env_guess << " " << tester_adiab_score(0, y) << endl;
+        M_env_guess += 0.01 * M_EARTH;
+    }
+    */
+
+
 
     return 0;
 }
