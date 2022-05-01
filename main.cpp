@@ -198,7 +198,7 @@ struct Shooting2 : public Shooting_method
     y=dy;
     Second_order integ(RHS,y,t1,t2,h1);
     try{
-    y = integ(ODE_solver::direction::BACKWARD);
+    y = integ();
     for (auto &&ye : y) std::cerr << ye;
     std::cerr << std::endl;
     for (auto &&ye : y) if (std::isnan(ye)) throw(0); 

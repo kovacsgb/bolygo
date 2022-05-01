@@ -1,6 +1,45 @@
 #include "shooting.hpp"
 
 
+ODE_solver::ODE_solver(Function& f_, std::vector<double> y0_,double start_,double end_,double step_) :
+     yval(y0_.size()), y0(y0_), dy(y0_.size()), var(start_), start(start_), end(end_), step(step_), f(f_),solving(), output(std::cout)
+     {
+         if (end > start && step > 0)
+         {
+             solving = [this]() {
+                double t=start;
+                yval = y0;
+                    // std::cerr << t << std::endl;
+                while (t <= end)
+                {
+                    this->solv_step(t);
+                    t+=step;
+                }
+                return yval;
+            };
+         }
+         else
+         {
+            solving = [this](){ 
+                double t=start;
+                yval = y0;
+                // std::cerr << t << std::endl;
+                while (t >= end)
+                {
+                    this->solv_step(t);
+                    t+=step;
+                }
+
+                output << std::endl;
+                return yval;
+            };
+         }
+         
+
+     }
+
+
+
 std::vector<double> ODE_solver::operator()(std::vector<double> new_y0)
 {
     this->y0 = new_y0;
@@ -31,7 +70,7 @@ std::vector<double> ODE_solver::operator()(ODE_solver::direction where)
 
  std::vector<double> ODE_solver::operator()()
 {
-    double t=start;
+   /* double t=start;
     yval = y0;
    // std::cerr << t << std::endl;
     while (t <= end)
@@ -41,7 +80,8 @@ std::vector<double> ODE_solver::operator()(ODE_solver::direction where)
     }
 
     
-    return yval;
+    return yval;*/
+    return this->solving();
 }
 
 void ODE_solver::solv_step(double t)

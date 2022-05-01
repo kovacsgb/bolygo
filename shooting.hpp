@@ -7,6 +7,7 @@
 #include <fstream>
 #include <cmath>
 #include <limits>
+#include <functional>
 
 
 typedef double Dvar;
@@ -31,16 +32,19 @@ class ODE_solver{
  * k2 = h*f(x_n+1/2*h,y_n+1/2*k1)
  * y_n+1=y_n+k2
 */
+    private:
+    std::vector<double> Forward;
+
     protected:
     std::vector<double> yval;
     std::vector<double> y0;
     std::vector<double> dy;
-    //std::vector<double> Parameters; // Not necessary is part of Function
     double var;
     double start;
     double end;
     double step;
     Function& f;
+    std::function<std::vector<double>()> solving;
 
     virtual void solv_step(double t);
 
@@ -48,12 +52,13 @@ class ODE_solver{
     enum direction { FORWARD, BACKWARD};
     std::ostream& output;
     ODE_solver(); //contructor
-    ODE_solver(Function& f_, std::vector<double> y0_,double start_,double end_,double step_) :
-     yval(y0_.size()), y0(y0_), dy(y0_.size()), var(start_), start(start_), end(end_), step(step_), f(f_), output(std::cout){}
+    ODE_solver(Function& f_, std::vector<double> y0_,double start_,double end_,double step_);
 
     std::vector<double> operator()();
     std::vector<double> operator()(std::vector<double> new_y0);
     std::vector<double> operator()(direction where);
+
+    
 
     
 
