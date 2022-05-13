@@ -140,7 +140,7 @@ struct adiabatikus_score : public MultiVariable
 
     double operator()(double t, std::vector<double> y)
     {
-        return M_core-y[1];
+        return (double)((long double)M_core-(long double)y[1]);
     }
 
 };
@@ -299,7 +299,7 @@ int main()
     adiabatikus_init tester_adiab{rho_neb*c_s*c_s,M_core,c_s};
     adiabatikus_score tester_adiab_score{M_core};
 
-    Shooting2 tester_adiab_shoot{2,R,r_core,tester_adiab,bolygo,tester_adiab_score};
+    Shooting_method tester_adiab_shoot{2,R,r_core,tester_adiab,bolygo,tester_adiab_score};
     
     NewtonRaphson tester_adiab_newton{tester_adiab_shoot};
 
@@ -333,13 +333,13 @@ int main()
         M_tot=M_core+M_env_guess;
         R= bolygo.GRAVI_CONST * M_tot / (c_s*c_s);
         //Second_order test_bolygo(bolygo,{bolygo.K*std::pow(rho_neb,1/bolygo.gamma),M_tot},R,r_core,-(R-r_core)/1e3);
-        Second_order test_bolygo(bolygo,{rho_neb*c_s*c_s,M_tot},R,r_core,-(R-r_core)/5e3);
+        RK4 test_bolygo(bolygo,{rho_neb*c_s*c_s,M_tot},R,r_core,-(R-r_core)/1e3);
         auto y = test_bolygo(ODE_solver::direction::BACKWARD);
         Fxtest << M_env_guess << " " << tester_adiab_score(0, y) << endl;
         M_env_guess += 0.01 * M_EARTH;
     }
-    */
-
+    
+*/
 
 
     return 0;

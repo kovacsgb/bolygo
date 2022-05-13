@@ -232,6 +232,7 @@ double NewtonRaphson::operator()(double start, const double x1, const double x2)
     double dx = origrange;
     double fx = f(start);
     double dfx = df(start,fx);
+    double x_accuracy = EPS* origrange/2;
 
     for(int i=0;i<MAX_IT;i++)
     {
@@ -254,7 +255,7 @@ double NewtonRaphson::operator()(double start, const double x1, const double x2)
             x -= dx;
             if(temp == x) return x;
         }
-        if (std::abs(dx/x) < EPS) return x;
+        if (std::abs(dx) < x_accuracy) return x;
         fx =f(x);
         dfx=df(x,fx);
         if(fx < 0)
