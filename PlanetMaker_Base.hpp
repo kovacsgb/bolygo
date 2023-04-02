@@ -21,6 +21,8 @@ class PlanetMaker_Base
 
     public:
 
+    PlanetMaker_Base() : CalcFunc(nullptr), Planet(nullptr), InitFunc(nullptr), ScoreFunc(nullptr),Solver(nullptr) {}
+
     PlanetMaker_Base( std::unique_ptr<Shooting_method>&& method, std::unique_ptr<Function>&& planet, std::unique_ptr<Function2>&& init, std::unique_ptr<MultiVariable>&& score, std::unique_ptr<NewtonRaphson>&& solver):
        CalcFunc(std::move(method)), Planet(std::move(planet)), InitFunc(std::move(init)), ScoreFunc(std::move(score)), Solver(std::move(solver)) {}
     enum Type {ADIABATIC};
