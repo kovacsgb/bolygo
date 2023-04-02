@@ -66,6 +66,7 @@ std::vector<double> ODE_solver::operator()(ODE_solver::direction where)
             return yval;
             break;
     }
+    return this->yval;
 }
 
  std::vector<double> ODE_solver::operator()()
@@ -87,6 +88,7 @@ std::vector<double> ODE_solver::operator()(ODE_solver::direction where)
 void ODE_solver::solv_step(double t)
 {
     f(yval,dy,t);
+    #ifdef DEBUG_SOLVER
     std::cout << t << " ";
     for(auto&& y : yval)
     {
@@ -97,7 +99,7 @@ void ODE_solver::solv_step(double t)
         std::cout << y << " ";
     }
     std::cout << std::endl;
-
+    #endif
     for(size_t i=0;i<yval.size();i++) yval[i] += step*dy[i];
 }
 
@@ -106,6 +108,7 @@ void ODE_solver::solv_step(double t)
 
 void Second_order::solv_step(double t)
 {
+    #ifdef DEBUG_SOLVER
     output << t << " ";
     for(auto&& y : yval)
     {
@@ -116,6 +119,7 @@ void Second_order::solv_step(double t)
         output << y << " ";
     }
     output << std::endl;
+    #endif
     Second_order_step(t);
 }
 
@@ -143,6 +147,7 @@ void Second_order::Second_order_step(double t)
 
 void RK4::solv_step(double t)
 {
+    #ifdef DEBUG_SOLVER
     std::cout << t << " ";
     for(auto&& y : yval)
     {
@@ -153,6 +158,7 @@ void RK4::solv_step(double t)
         std::cout << y << " ";
     }
     std::cout << std::endl;
+    #endif
     RK4_step(t);
 }
 
@@ -164,16 +170,16 @@ void RK4::RK4_step(double t)
     //calc k1
     f(yval,k1,t);
     //calc k2
-    for(auto i=0; i< temp.size();i++) temp[i] = yval[i] + h2*k1[i];
+    for(size_t i=0; i< temp.size();i++) temp[i] = yval[i] + h2*k1[i];
     f(temp,k2,tph);
     //calc k3
-    for(auto i=0; i<temp.size();i++) temp[i] = yval[i] + h2*k2[i];
+    for(size_t i=0; i<temp.size();i++) temp[i] = yval[i] + h2*k2[i];
     f(temp,k3,tph);
     //calc k4
-    for(auto i=0; i<temp.size();i++) temp[i] = yval[i] + step* k3[i];
+    for(size_t i=0; i<temp.size();i++) temp[i] = yval[i] + step* k3[i];
     f(temp,k4,t+step);
     //accumulate
-    for(auto i=0; i<yval.size();i++)
+    for(size_t i=0; i<yval.size();i++)
         yval[i] += h6 * (k1[i] + k4[i] + 2*(k2[i]+k3[i]));
 
 }
@@ -281,5 +287,33 @@ double Shooting_method::operator()(double x)
     Second_order integ(RHS,y,t1,t2,h1);
     y = integ();
     return Score(t2,y);
+    //---------------
+}
+
+double Shooting2::operator()(double x) 
+{
+    //--------------
+    y[1] = x;
+    dy[1] = 1000;
+    //static_cast<double (&)(std::vector<double>,std::vector<double> &, double&)>(InitCalc.operator())(y,dy,t1);
+    InitCalc2(y,dy,&t1);
+    double h1 = (t2-t1)/1e3;
+    log << t1 <<" " << t2 << " " << h1 << " " << dy[1] << " " << y[1] <<" " << x << std::endl;
+    y=dy;
+    Second_order integ(RHS,y,t1,t2,h1);
+    try{
+        y = integ();
+        for (auto &&ye : y) if (std::isnan(ye)) throw(0); 
+    }
+    catch(int e)
+    {
+        std::cerr << "One member of y is NAN! Write dump file.";
+        std::ofstream dump{"dump"};
+        integ.output.rdbuf(dump.rdbuf());
+        integ(ODE_solver::direction::BACKWARD);
+        throw("Not a Number error");
+    }
+
+    return this->Score(t2,y);
     //---------------
 }

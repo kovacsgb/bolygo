@@ -4,7 +4,7 @@
 		{
 			"type": "cppbuild",
 			"label": "C/C++: clang-5.0 build active file",
-			"command": "/usr/bin/clang++-5.0",
+			"command": "/usr/bin/g++",
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
@@ -12,6 +12,8 @@
 				"-std=c++14",
 				"main.cpp",
 				"shooting.cpp",
+				"PlanetMaker_Base.cpp",
+				"politrop.cpp",
 				"-o",
 				"bolygo",
 				"-lm"
@@ -26,7 +28,7 @@
 				"kind": "build",
 				"isDefault": true
 			},
-			"detail": "compiler: /usr/bin/clang-5.0"
+			"detail": "compiler: /usr/bin/g++"
 		}
 	]
 }

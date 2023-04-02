@@ -8,23 +8,9 @@
 #include <cmath>
 #include <limits>
 #include <functional>
+#include "Funcbase.hpp"
 
 
-typedef double Dvar;
-struct Function
-{
-     virtual void operator()(std::vector<double> y, std::vector<double> &dy, double t) = 0;
-};
-
-struct AlgebraicFunction
-{
-    virtual double operator()(double x) = 0;
-};
-
-struct MultiVariable : public AlgebraicFunction
-{
-    virtual double operator()(double t, std::vector<double> x)= 0;
-};
 
 class ODE_solver{
 /* Second order Runge-Kutta Solver
@@ -148,6 +134,7 @@ class NewtonRaphson
 };
 
 struct Shooting_method : public AlgebraicFunction
+/* Original base class for the Shooting method, uses forward calculation. */
 {
     double t1,t2;
     std::vector<double> init_vals;
@@ -162,5 +149,49 @@ struct Shooting_method : public AlgebraicFunction
 
     virtual double operator()(double x);
 };
+
+struct Shooting2 : public Shooting_method
+/* Backward calculating shooting method. This works well with polytrope envelope.
+*/
+{
+
+    Function2& InitCalc2;
+    std::ofstream log;
+
+    Shooting2(int n, double t1_, double t2_, Function2& InitCalc_, Function& RHS_, MultiVariable& Score_) :
+    Shooting_method(n,t1_,t2_,InitCalc_,RHS_,Score_), InitCalc2(InitCalc_), log("log"){}
+
+    double operator()(double x) override;
+
+
+};
+
+struct test_score : public MultiVariable
+{
+    double x2;
+
+    test_score(double x2_) : x2(x2_) {}
+
+    double operator()(double t)
+    {
+        return 0;
+    }
+
+    double operator()(double t, std::vector<double> y)
+    {
+        return x2-y[0];
+    }
+
+};
+
+struct test_init : public Function
+{
+    void operator()(std::vector<double> y,std::vector<double> &dy, double t)
+    {
+        dy[0]=y[0];
+        dy[1]=0;
+    }
+};
+
 
 #endif
