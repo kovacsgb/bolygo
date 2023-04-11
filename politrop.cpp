@@ -47,11 +47,12 @@ double adiabatikus_score::operator()(double t, std::vector<double> y)
     }
 
 
-void adiabatikus_init::setup(double rho_neb_, double M_core_, double c_s_)
+void adiabatikus_init::setup(ParameterBase* params)
     {
-        rho_neb=rho_neb_;
-        M_core=M_core_;
-        c_s=c_s_;
+        PolitropParameters Parameters= *static_cast<PolitropParameters*>(params);
+        rho_neb=Parameters.rho_neb;
+        M_core=Parameters.M_core;
+        c_s=Parameters.c_s;
     }
 
 double adiabatikus_init::operator()(std::vector<double> y,std::vector<double> &dy, double* t)
@@ -63,4 +64,14 @@ double adiabatikus_init::operator()(std::vector<double> y,std::vector<double> &d
         R=GRAVI_CONST *(M_core+y[1])/(c_s*c_s);
         *t=R;
         return R;
+    }
+
+    void adiabatikus2::setParams(ParameterBase* params)
+    {
+        this->rho=static_cast<InitPolitrop*>(params)->rho;
+    }
+    
+    ParameterBase* adiabatikus2::getParams()
+    {
+        return (new InitPolitrop{this->rho,this->gamma,this->K});
     }

@@ -30,9 +30,9 @@ class init_exception : public exception
 
 PlanetMaker_Base PlanetMaker_Base::buildInstance(PlanetMaker_Base::Type ModelType)
 {
-    std::unique_ptr<Function> NewPlanet = nullptr;
-    std::unique_ptr<Function2> NewInitFunc = nullptr;
-    std::unique_ptr<MultiVariable> NewScore = nullptr;
+    std::unique_ptr<PlanetBase> NewPlanet = nullptr;
+    std::unique_ptr<InitPlanetBase> NewInitFunc = nullptr;
+    std::unique_ptr<ScorePlanetBase> NewScore = nullptr;
     int n = 0;
 
     switch (ModelType)
@@ -48,9 +48,9 @@ PlanetMaker_Base PlanetMaker_Base::buildInstance(PlanetMaker_Base::Type ModelTyp
         throw(init_exception(__func__,__LINE__));
         break;
     }
-    std::unique_ptr<Shooting_method> shoot{ new Shooting_method(n,0,0,*NewInitFunc,*NewPlanet,*NewScore)};
+    std::unique_ptr<Shooting_method> shoot{ new Shooting2(n,0,0,static_cast<Function2&>(*NewInitFunc),static_cast<Function&>(*NewPlanet),static_cast<MultiVariable&>(*NewScore))};
 
-    std::unique_ptr<NewtonRaphson> NewSolver{ new NewtonRaphson{*shoot}};
+    std::unique_ptr<NewtonRaphson> NewSolver{ new NewtonRaphson{static_cast<AlgebraicFunction&>(*shoot)}};
 
     PlanetMaker_Base newOne(std::move(shoot),std::move(NewPlanet),std::move(NewInitFunc),std::move(NewScore),std::move(NewSolver));
 
@@ -64,9 +64,18 @@ double PlanetMaker_Base::calculateM_env(Doub M_core, Doub rho_neb, Doub c_s)
     Doub M_env_guess{0};
     Doub R_core{std::pow((3*M_core / (4.* M_PI*5.5)),1./3.)};
     std::cerr<< "Start ready" << std::endl;
-    static_cast<adiabatikus2*>(Planet.get())->rho=rho_neb;
-    static_cast<adiabatikus_score*>(ScoreFunc.get())->M_core=M_core;
-    static_cast<adiabatikus_init*>(InitFunc.get())->setup(rho_neb*c_s*c_s,M_core,c_s);
+    InitPolitrop InitParams{rho_neb,0,0};
+    PolitropParameters SetupParams;
+    SetupParams.c_s=c_s;
+    SetupParams.M_core=M_core;
+    SetupParams.rho_neb=rho_neb*c_s*c_s;//actually P_neb... This is bad! 
+    //std::shared_ptr<ParameterBase> InitPointer{&InitParams};
+    Planet->setParams(&InitParams);
+    ScoreFunc->M_core=M_core;
+    
+
+    //std::shared_ptr<ParameterBase> SetupPointer(&SetupParams);
+    InitFunc->setup(&SetupParams);
     //Shooting_method shoot(2,GRAVI_CONST * (M_core+M_EARTH) / (c_s*c_s),R_core,*InitFunc,*Planet,*ScoreFunc);
 
     //NewtonRaphson NewSolver{shoot};
@@ -75,19 +84,21 @@ double PlanetMaker_Base::calculateM_env(Doub M_core, Doub rho_neb, Doub c_s)
     CalcFunc->t2=R_core;
     CalcFunc->t1=GRAVI_CONST * (M_core+M_EARTH) / (c_s*c_s);
     std::cerr << "Init ready" << std::endl;
+
     //std::cerr << (*CalcFunc)(1*M_EARTH) << std::endl;
-    adiabatikus2 bolygo;
+  /*  adiabatikus2 bolygo;
     bolygo.rho = rho_neb;
     adiabatikus_init tester_adiab{rho_neb*c_s*c_s,M_core,c_s};
     adiabatikus_score tester_adiab_score{M_core};
 
-    Shooting2 tester_adiab_shoot{2,CalcFunc->t1,CalcFunc->t2,tester_adiab,bolygo,tester_adiab_score};
+    Shooting2 tester_adiab_shoot{2,CalcFunc->t1,CalcFunc->t2,*InitFunc,*Planet,*ScoreFunc};
     
-    NewtonRaphson tester_adiab_newton{tester_adiab_shoot};
+    NewtonRaphson tester_adiab_newton{tester_adiab_shoot};*/
 
     try
     {
-        return tester_adiab_newton(12 * M_EARTH, 1e-6 * M_EARTH , 15 * M_EARTH);
+        return (*Solver)(12 * M_EARTH, 1e-6 * M_EARTH , 15 * M_EARTH);
+
         //M_env_guess = (*Solver)(1 * M_EARTH, 1e-6 * M_EARTH , 15 * M_EARTH);
     }
     catch(char const * e)
@@ -101,4 +112,10 @@ double PlanetMaker_Base::calculateM_env(Doub M_core, Doub rho_neb, Doub c_s)
         std::exit(0);
     }
     return M_env_guess;
+}
+
+Envelope PlanetMaker_Base::BuildEnvelope(Doub M_core, Doub M_env, Doub rho_neb, Doub c_s)
+{
+    Doub R_core{std::pow((3*M_core / (4.* M_PI*5.5)),1./3.)};
+    return Envelope{};
 }
