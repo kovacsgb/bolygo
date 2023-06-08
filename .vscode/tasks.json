@@ -12,15 +12,17 @@
 				"-Wall",
 				"-std=c++14",
 				"main.cpp",
-				"shooting.cpp",
-				"PlanetMaker_Base.cpp",
-				"politrop.cpp",
+				"src/shooting.cpp",
+				"src/PlanetMaker_Base.cpp",
+				"src/politrop.cpp",
 				"-o",
 				"bolygo",
-				"-lm"
+				"-lm",
+				"-I",
+				"${workspaceFolder}/include"
 			],
 			"options": {
-				"cwd": "${fileDirname}"
+				"cwd": "${workspaceFolder}"
 			},
 			"problemMatcher": [
 				"$gcc"

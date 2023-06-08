@@ -1,0 +1,3202 @@
+opac.f90:498:37:
+
+       PARAMETER (kR_H='kR_h2001.dat', 
+                                     1
+Error: Expected variable name at (1) in PARAMETER statement
+opac.f90:500:17:
+
+                  kP_H='kP_h2001.dat') 
+                 1
+Error: Unclassifiable statement at (1)
+opac.f90:556:73:
+
+       REAL*8 ro, tt, T_ev, temp, dt, PI, tmax1, tmax2, tmin, T1, T2, TD, 
+                                                                         1
+Error: Invalid character in name at (1)
+opac.f90:557:13:
+
+              T, aKrL, aKrR, aKg_ext, AA, BB, FF 
+             1
+Error: Unclassifiable statement at (1)
+opac.f90:573:51:
+
+           /1.090E+02,1.180E+02,1.290E+02,1.430E+02, 
+                                                   1
+Error: Syntax error in DATA statement at (1)
+opac.f90:575:13:
+
+            1.590E+02,1.800E+02,2.070E+02,2.440E+02, 
+             1
+Error: Non-numeric character in statement label at (1)
+opac.f90:575:17:
+
+            1.590E+02,1.800E+02,2.070E+02,2.440E+02, 
+                 1
+Error: Non-numeric character in statement label at (1)
+opac.f90:575:17:
+
+            1.590E+02,1.800E+02,2.070E+02,2.440E+02, 
+                 1
+Error: Unclassifiable statement at (1)
+opac.f90:577:13:
+
+            8.350E+02,9.080E+02,9.940E+02,1.100E+03, 
+             1
+Error: Non-numeric character in statement label at (1)
+opac.f90:577:17:
+
+            8.350E+02,9.080E+02,9.940E+02,1.100E+03, 
+                 1
+Error: Non-numeric character in statement label at (1)
+opac.f90:577:17:
+
+            8.350E+02,9.080E+02,9.940E+02,1.100E+03, 
+                 1
+Error: Unclassifiable statement at (1)
+opac.f90:579:13:
+
+            1.230E+03,1.395E+03,1.612E+03,1.908E+03, 
+             1
+Error: Non-numeric character in statement label at (1)
+opac.f90:579:17:
+
+            1.230E+03,1.395E+03,1.612E+03,1.908E+03, 
+                 1
+Error: Non-numeric character in statement label at (1)
+opac.f90:579:17:
+
+            1.230E+03,1.395E+03,1.612E+03,1.908E+03, 
+                 1
+Error: Unclassifiable statement at (1)
+opac.f90:581:13:
+
+            9.020E+02,9.800E+02,1.049E+03,1.129E+03, 
+             1
+Error: Non-numeric character in statement label at (1)
+opac.f90:581:17:
+
+            9.020E+02,9.800E+02,1.049E+03,1.129E+03, 
+                 1
+Error: Non-numeric character in statement label at (1)
+opac.f90:581:17:
+
+            9.020E+02,9.800E+02,1.049E+03,1.129E+03, 
+                 1
+Error: Unclassifiable statement at (1)
+opac.f90:583:13:
+
+            1.222E+03,1.331E+03,1.462E+03,1.621E+03, 
+             1
+Error: Non-numeric character in statement label at (1)
+opac.f90:583:17:
+
+            1.222E+03,1.331E+03,1.462E+03,1.621E+03, 
+                 1
+Error: Non-numeric character in statement label at (1)
+opac.f90:583:17:
+
+            1.222E+03,1.331E+03,1.462E+03,1.621E+03, 
+                 1
+Error: Unclassifiable statement at (1)
+opac.f90:585:13:
+
+            9.290E+02,9.970E+02,1.076E+03,1.168E+03, 
+             1
+Error: Non-numeric character in statement label at (1)
+opac.f90:585:17:
+
+            9.290E+02,9.970E+02,1.076E+03,1.168E+03, 
+                 1
+Error: Non-numeric character in statement label at (1)
+opac.f90:585:17:
+
+            9.290E+02,9.970E+02,1.076E+03,1.168E+03, 
+                 1
+Error: Unclassifiable statement at (1)
+opac.f90:587:13:
+
+            1.277E+03,1.408E+03,1.570E+03,1.774E+03/ 
+             1
+Error: Non-numeric character in statement label at (1)
+opac.f90:587:17:
+
+            1.277E+03,1.408E+03,1.570E+03,1.774E+03/ 
+                 1
+Error: Non-numeric character in statement label at (1)
+opac.f90:587:17:
+
+            1.277E+03,1.408E+03,1.570E+03,1.774E+03/ 
+                 1
+Error: Unclassifiable statement at (1)
+opac.f90:647:72:
+
+          IF ((T_in.gt.(T(IT-1)+dT(IT-1))).and.(T_in.le.(T(IT)+dT(IT)))) 
+                                                                        1
+Error: Cannot assign to a named constant at (1)
+opac.f90:735:71:
+
+       DATA  T(1), T(2), T(3), T(4), T(5), T(6), T(7), T(8), T(9),T(10), 
+                                                                       1
+Error: Syntax error in DATA statement at (1)
+opac.f90:736:11:
+
+            T(11),T(12),T(13),T(14),T(15),T(16),T(17),T(18),T(19),T(20), 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:737:11:
+
+            T(21),T(22),T(23),T(24),T(25),T(26),T(27),T(28),T(29),T(30), 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:738:11:
+
+            T(31),T(32),T(33),T(34),T(35),T(36),T(37),T(38),T(39),T(40), 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:739:11:
+
+            T(41),T(42),T(43),T(44),T(45),T(46),T(47),T(48),T(49),T(50), 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:740:11:
+
+            T(51),T(52),T(53),T(54),T(55),T(56),T(57),T(58),T(59),T(60), 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:741:11:
+
+            T(61),T(62),T(63),T(64),T(65),T(66),T(67),T(68),T(69),T(70), 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:742:11:
+
+            T(71) & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:982:34:
+
+            /0.244153190819473D-03, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:983:11:
+
+            -0.191588103585833D-03, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:990:11:
+
+            -0.801305197566973D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:997:13: Error: Zero is not a valid statement label at (1)
+opac.f90:997:14:
+
+             0.160197849829283D+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:997:29:
+
+             0.160197849829283D+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:997:30:
+
+             0.160197849829283D+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:997:30:
+
+             0.160197849829283D+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1004:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1004:14:
+
+             0.354301116460647D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1004:29:
+
+             0.354301116460647D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1004:30:
+
+             0.354301116460647D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1004:30:
+
+             0.354301116460647D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1011:11:
+
+            -0.260479348963077D-02, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1023:34:
+
+            /0.423062838413742D-03, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:1024:11:
+
+            -0.191556936842122D-02, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1031:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1031:14:
+
+             0.302186734201724D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1031:29:
+
+             0.302186734201724D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1031:30:
+
+             0.302186734201724D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1031:30:
+
+             0.302186734201724D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1038:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1038:14:
+
+             0.120954274022502D+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1038:29:
+
+             0.120954274022502D+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1038:30:
+
+             0.120954274022502D+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1038:30:
+
+             0.120954274022502D+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1045:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1045:14:
+
+             0.664915248499724D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1045:29:
+
+             0.664915248499724D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1045:30:
+
+             0.664915248499724D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1045:30:
+
+             0.664915248499724D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1052:11:
+
+            -0.166789974601131D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1105:34:
+
+            /0.241868473745753D-01, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:1106:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1106:14:
+
+             0.778492928244887D-03, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1106:29:
+
+             0.778492928244887D-03, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1106:30:
+
+             0.778492928244887D-03, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1106:30:
+
+             0.778492928244887D-03, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1113:11:
+
+            -0.147692895446187D+00, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1120:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1120:14:
+
+             0.207736375394269D+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1120:29:
+
+             0.207736375394269D+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1120:30:
+
+             0.207736375394269D+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1120:30:
+
+             0.207736375394269D+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1127:11:
+
+            -0.740119036963982D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1134:11:
+
+            -0.125379874861012D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1146:34:
+
+            /0.347493611283224D-01, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:1147:11:
+
+            -0.560836248243543D-02, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1154:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1154:14:
+
+             0.114110901145235D+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1154:29:
+
+             0.114110901145235D+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1154:30:
+
+             0.114110901145235D+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1154:30:
+
+             0.114110901145235D+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1161:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1161:14:
+
+             0.151425482290890D+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1161:29:
+
+             0.151425482290890D+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1161:30:
+
+             0.151425482290890D+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1161:30:
+
+             0.151425482290890D+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1168:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1168:14:
+
+             0.431209143726505D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1168:29:
+
+             0.431209143726505D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1168:30:
+
+             0.431209143726505D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1168:30:
+
+             0.431209143726505D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1175:11:
+
+            -0.358197096572059D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1229:34:
+
+            /0.519867225867212D-03, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:1230:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1230:14:
+
+             0.180058512896224D-03, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1230:29:
+
+             0.180058512896224D-03, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1230:30:
+
+             0.180058512896224D-03, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1230:30:
+
+             0.180058512896224D-03, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1237:11:
+
+            -0.422661131364785D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1244:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1244:14:
+
+             0.755230656285519D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1244:29:
+
+             0.755230656285519D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1244:30:
+
+             0.755230656285519D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1244:30:
+
+             0.755230656285519D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1251:11:
+
+            -0.826824733591991D-02, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1258:11:
+
+            -0.371281327665396D-02, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1270:34:
+
+            /0.191934093077390D-02, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:1271:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1271:14:
+
+             0.141738348367326D-03, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1271:29:
+
+             0.141738348367326D-03, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1271:30:
+
+             0.141738348367326D-03, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1271:30:
+
+             0.141738348367326D-03, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1278:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1278:14:
+
+             0.429796005017331D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1278:29:
+
+             0.429796005017331D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1278:30:
+
+             0.429796005017331D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1278:30:
+
+             0.429796005017331D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1285:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1285:14:
+
+             0.865739688529015D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1285:29:
+
+             0.865739688529015D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1285:30:
+
+             0.865739688529015D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1285:30:
+
+             0.865739688529015D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1292:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1292:14:
+
+             0.715076192965753D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1292:29:
+
+             0.715076192965753D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1292:30:
+
+             0.715076192965753D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1292:30:
+
+             0.715076192965753D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1299:11:
+
+            -0.127405068642357D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1353:34:
+
+            /0.211770185099498D-03, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:1354:11:
+
+            -0.177447081534454D-03, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1361:11:
+
+            -0.100726011127870D+00, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1368:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1368:14:
+
+             0.176434307754734D+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1368:29:
+
+             0.176434307754734D+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1368:30:
+
+             0.176434307754734D+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1368:30:
+
+             0.176434307754734D+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1375:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1375:14:
+
+             0.326534361175135D-02, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1375:29:
+
+             0.326534361175135D-02, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1375:30:
+
+             0.326534361175135D-02, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1375:30:
+
+             0.326534361175135D-02, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1382:11:
+
+            -0.246214277093693D-02, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1394:34:
+
+            /0.366050010135324D-03, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:1395:11:
+
+            -0.196181114693260D-02, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1402:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1402:14:
+
+             0.344865312784342D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1402:29:
+
+             0.344865312784342D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1402:30:
+
+             0.344865312784342D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1402:30:
+
+             0.344865312784342D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1409:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1409:14:
+
+             0.152941991504775D+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1409:29:
+
+             0.152941991504775D+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1409:30:
+
+             0.152941991504775D+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1409:30:
+
+             0.152941991504775D+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1416:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1416:14:
+
+             0.575577983185305D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1416:29:
+
+             0.575577983185305D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1416:30:
+
+             0.575577983185305D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1416:30:
+
+             0.575577983185305D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1423:11:
+
+            -0.184990920136232D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1476:34:
+
+            /0.122051600622987D-01, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:1477:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1477:14:
+
+             0.725480550488905D-03, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1477:29:
+
+             0.725480550488905D-03, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1477:30:
+
+             0.725480550488905D-03, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1477:30:
+
+             0.725480550488905D-03, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1484:11:
+
+            -0.978898757466869D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1491:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1491:14:
+
+             0.193581659006369D+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1491:29:
+
+             0.193581659006369D+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1491:30:
+
+             0.193581659006369D+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1491:30:
+
+             0.193581659006369D+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1498:11:
+
+            -0.217355364350702D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1505:11:
+
+            -0.628811292824788D-02, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1517:34:
+
+            /0.173619167582948D-01, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:1518:11:
+
+            -0.361893529390310D-02, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1525:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1525:14:
+
+             0.440416079300803D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1525:29:
+
+             0.440416079300803D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1525:30:
+
+             0.440416079300803D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1525:30:
+
+             0.440416079300803D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1532:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1532:14:
+
+             0.152170793836831D+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1532:29:
+
+             0.152170793836831D+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1532:30:
+
+             0.152170793836831D+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1532:30:
+
+             0.152170793836831D+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1539:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1539:14:
+
+             0.388871968614808D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1539:29:
+
+             0.388871968614808D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1539:30:
+
+             0.388871968614808D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1539:30:
+
+             0.388871968614808D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1546:11:
+
+            -0.243329166513556D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1600:34:
+
+            /0.276801205127708D-03, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:1601:11:
+
+            -0.381731756583378D-04, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1608:11:
+
+            -0.120651633250931D+00, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1615:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1615:14:
+
+             0.505806507849164D+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1615:29:
+
+             0.505806507849164D+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1615:30:
+
+             0.505806507849164D+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1615:30:
+
+             0.505806507849164D+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1622:11:
+
+            -0.180098161036177D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1629:11:
+
+            -0.335902561018642D-02, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1641:34:
+
+            /0.513261299896949D-03, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:1642:11:
+
+            -0.181306680219879D-02, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1649:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1649:14:
+
+             0.634803174529273D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1649:29:
+
+             0.634803174529273D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1649:30:
+
+             0.634803174529273D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1649:30:
+
+             0.634803174529273D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1656:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1656:14:
+
+             0.120127510474273D+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1656:29:
+
+             0.120127510474273D+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1656:30:
+
+             0.120127510474273D+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1656:30:
+
+             0.120127510474273D+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1663:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1663:14:
+
+             0.496177910255966D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1663:29:
+
+             0.496177910255966D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1663:30:
+
+             0.496177910255966D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1663:30:
+
+             0.496177910255966D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1670:11:
+
+            -0.157858987410152D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1724:34:
+
+            /0.448716952118912D-03, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:1725:11:
+
+            -0.121087027799125D-03, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1732:11:
+
+            -0.446872071903881D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1739:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1739:14:
+
+             0.111785864483419D+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1739:29:
+
+             0.111785864483419D+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1739:30:
+
+             0.111785864483419D+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1739:30:
+
+             0.111785864483419D+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1746:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1746:14:
+
+             0.397412595455471D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1746:29:
+
+             0.397412595455471D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1746:30:
+
+             0.397412595455471D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1746:30:
+
+             0.397412595455471D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1753:11:
+
+            -0.213405804655453D-02, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1765:34:
+
+            /0.675247142371240D-03, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:1766:11:
+
+            -0.180871641248512D-02, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1773:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1773:14:
+
+             0.293545307083072D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1773:29:
+
+             0.293545307083072D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1773:30:
+
+             0.293545307083072D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1773:30:
+
+             0.293545307083072D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1780:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1780:14:
+
+             0.847456608016088D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1780:29:
+
+             0.847456608016088D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1780:30:
+
+             0.847456608016088D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1780:30:
+
+             0.847456608016088D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1787:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1787:14:
+
+             0.492650962434666D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1787:29:
+
+             0.492650962434666D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1787:30:
+
+             0.492650962434666D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1787:30:
+
+             0.492650962434666D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1794:11:
+
+            -0.119523016015378D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1847:34:
+
+            /0.245541430111114D-01, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:1848:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1848:14:
+
+             0.423188073215978D-02, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1848:29:
+
+             0.423188073215978D-02, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1848:30:
+
+             0.423188073215978D-02, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1848:30:
+
+             0.423188073215978D-02, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1855:11:
+
+            -0.330731648461098D+00, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1862:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1862:14:
+
+             0.499311098121487D+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1862:29:
+
+             0.499311098121487D+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1862:30:
+
+             0.499311098121487D+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1862:30:
+
+             0.499311098121487D+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1869:11:
+
+            -0.294224614020919D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1876:11:
+
+            -0.309473698100117D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1888:34:
+
+            /0.350084639895791D-01, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:1889:11:
+
+            -0.650673267299652D-02, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1896:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1896:14:
+
+             0.505978984616010D+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1896:29:
+
+             0.505978984616010D+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1896:30:
+
+             0.505978984616010D+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1896:30:
+
+             0.505978984616010D+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1903:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1903:14:
+
+             0.205104310731812D+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1903:29:
+
+             0.205104310731812D+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1903:30:
+
+             0.205104310731812D+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1903:30:
+
+             0.205104310731812D+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1910:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1910:14:
+
+             0.321138011065329D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1910:29:
+
+             0.321138011065329D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1910:30:
+
+             0.321138011065329D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1910:30:
+
+             0.321138011065329D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1917:11:
+
+            -0.544333376857938D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1971:34:
+
+            /0.369445521733393D-03, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:1972:11:
+
+            -0.822083223050224D-04, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1979:11:
+
+            -0.503436633369645D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:1986:13: Error: Zero is not a valid statement label at (1)
+opac.f90:1986:14:
+
+             0.988228392396842D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1986:29:
+
+             0.988228392396842D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:1986:30:
+
+             0.988228392396842D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:1986:30:
+
+             0.988228392396842D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:1993:11:
+
+            -0.201847825087000D-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:2000:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2000:14:
+
+             0.757770858114792D-03, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2000:29:
+
+             0.757770858114792D-03, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2000:30:
+
+             0.757770858114792D-03, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2000:30:
+
+             0.757770858114792D-03, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2012:34:
+
+            /0.636434053917017D-03, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:2013:11:
+
+            -0.160861573302469D-02, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:2020:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2020:14:
+
+             0.360059623487543D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2020:29:
+
+             0.360059623487543D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2020:30:
+
+             0.360059623487543D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2020:30:
+
+             0.360059623487543D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2027:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2027:14:
+
+             0.110194242464550D+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2027:29:
+
+             0.110194242464550D+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2027:30:
+
+             0.110194242464550D+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2027:30:
+
+             0.110194242464550D+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2034:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2034:14:
+
+             0.290920098238345D-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2034:29:
+
+             0.290920098238345D-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2034:30:
+
+             0.290920098238345D-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2034:30:
+
+             0.290920098238345D-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2041:11:
+
+            -0.113065151550762D-02, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:2095:35:
+
+             /0.236109236817865E-02, 
+                                   1
+Error: Syntax error in DATA statement at (1)
+opac.f90:2096:14: Error: Zero is not a valid statement label at (1)
+opac.f90:2096:15:
+
+              0.168691259807248E-02, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2096:30:
+
+              0.168691259807248E-02, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:2096:31:
+
+              0.168691259807248E-02, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2096:31:
+
+              0.168691259807248E-02, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:2103:12:
+
+             -0.416611063882709E-01, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:2110:14: Error: Zero is not a valid statement label at (1)
+opac.f90:2110:15:
+
+              0.863122988673855E-01, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2110:30:
+
+              0.863122988673855E-01, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:2110:31:
+
+              0.863122988673855E-01, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2110:31:
+
+              0.863122988673855E-01, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:2117:12:
+
+             -0.427972786642571E-01, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:2136:34:
+
+            /0.968106067481123E-02, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:2137:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2137:14:
+
+             0.488782650671213E-02, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2137:29:
+
+             0.488782650671213E-02, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2137:30:
+
+             0.488782650671213E-02, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2137:30:
+
+             0.488782650671213E-02, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2144:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2144:14:
+
+             0.296539924474562E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2144:29:
+
+             0.296539924474562E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2144:30:
+
+             0.296539924474562E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2144:30:
+
+             0.296539924474562E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2151:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2151:14:
+
+             0.611883310727851E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2151:29:
+
+             0.611883310727851E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2151:30:
+
+             0.611883310727851E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2151:30:
+
+             0.611883310727851E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2158:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2158:14:
+
+             0.583500314497411E-02, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2158:29:
+
+             0.583500314497411E-02, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2158:30:
+
+             0.583500314497411E-02, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2158:30:
+
+             0.583500314497411E-02, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2218:36:
+
+             / 0.883862204249974E-01, 
+                                    1
+Error: Syntax error in DATA statement at (1)
+opac.f90:2219:15: Error: Zero is not a valid statement label at (1)
+opac.f90:2219:16:
+
+               0.316265770662144E-01, & 
+                1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2219:31:
+
+               0.316265770662144E-01, & 
+                               1
+Error: Too many digits in statement label at (1)
+opac.f90:2219:32:
+
+               0.316265770662144E-01, & 
+                                1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2219:32:
+
+               0.316265770662144E-01, & 
+                                1
+Error: Unclassifiable statement at (1)
+opac.f90:2226:13:
+
+              -0.350623289221934E-01, & 
+             1
+Error: Unclassifiable statement at (1)
+opac.f90:2233:15: Error: Zero is not a valid statement label at (1)
+opac.f90:2233:16:
+
+               0.101563268813365E+00, & 
+                1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2233:31:
+
+               0.101563268813365E+00, & 
+                               1
+Error: Too many digits in statement label at (1)
+opac.f90:2233:32:
+
+               0.101563268813365E+00, & 
+                                1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2233:32:
+
+               0.101563268813365E+00, & 
+                                1
+Error: Unclassifiable statement at (1)
+opac.f90:2240:13:
+
+              -0.165846142501944E-01, & 
+             1
+Error: Unclassifiable statement at (1)
+opac.f90:2260:34:
+
+            /0.111411915643134E+00, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:2261:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2261:14:
+
+             0.252006314266762E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2261:29:
+
+             0.252006314266762E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2261:30:
+
+             0.252006314266762E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2261:30:
+
+             0.252006314266762E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2268:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2268:14:
+
+             0.389747405277225E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2268:29:
+
+             0.389747405277225E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2268:30:
+
+             0.389747405277225E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2268:30:
+
+             0.389747405277225E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2275:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2275:14:
+
+             0.645036999423646E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2275:29:
+
+             0.645036999423646E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2275:30:
+
+             0.645036999423646E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2275:30:
+
+             0.645036999423646E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2282:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2282:14:
+
+             0.163757622580380E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2282:29:
+
+             0.163757622580380E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2282:30:
+
+             0.163757622580380E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2282:30:
+
+             0.163757622580380E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2343:35:
+
+             /0.277317740164441E+00, 
+                                   1
+Error: Syntax error in DATA statement at (1)
+opac.f90:2344:14: Error: Zero is not a valid statement label at (1)
+opac.f90:2344:15:
+
+              0.485053543175252E-01, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2344:30:
+
+              0.485053543175252E-01, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:2344:31:
+
+              0.485053543175252E-01, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2344:31:
+
+              0.485053543175252E-01, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:2351:12:
+
+             -0.351377373047415E-01, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:2358:14: Error: Zero is not a valid statement label at (1)
+opac.f90:2358:15:
+
+              0.130524763171563E+00, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2358:30:
+
+              0.130524763171563E+00, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:2358:31:
+
+              0.130524763171563E+00, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2358:31:
+
+              0.130524763171563E+00, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:2365:14: Error: Zero is not a valid statement label at (1)
+opac.f90:2365:15:
+
+              0.228876670722336E-01, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2365:30:
+
+              0.228876670722336E-01, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:2365:31:
+
+              0.228876670722336E-01, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2365:31:
+
+              0.228876670722336E-01, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:2385:34:
+
+            /0.301898096742562E+00, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:2386:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2386:14:
+
+             0.373848509773533E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2386:29:
+
+             0.373848509773533E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2386:30:
+
+             0.373848509773533E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2386:30:
+
+             0.373848509773533E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2393:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2393:14:
+
+             0.736373599214970E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2393:29:
+
+             0.736373599214970E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2393:30:
+
+             0.736373599214970E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2393:30:
+
+             0.736373599214970E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2400:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2400:14:
+
+             0.744782095414529E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2400:29:
+
+             0.744782095414529E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2400:30:
+
+             0.744782095414529E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2400:30:
+
+             0.744782095414529E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2407:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2407:14:
+
+             0.135854404734900E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2407:29:
+
+             0.135854404734900E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2407:30:
+
+             0.135854404734900E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2407:30:
+
+             0.135854404734900E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2468:35:
+
+             /0.272590783978286E-02, 
+                                   1
+Error: Syntax error in DATA statement at (1)
+opac.f90:2469:14: Error: Zero is not a valid statement label at (1)
+opac.f90:2469:15:
+
+              0.209187007242247E-02, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2469:30:
+
+              0.209187007242247E-02, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:2469:31:
+
+              0.209187007242247E-02, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2469:31:
+
+              0.209187007242247E-02, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:2476:12:
+
+             -0.549608891017917E-01, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:2483:14: Error: Zero is not a valid statement label at (1)
+opac.f90:2483:15:
+
+              0.857170478197290E-01, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2483:30:
+
+              0.857170478197290E-01, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:2483:31:
+
+              0.857170478197290E-01, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2483:31:
+
+              0.857170478197290E-01, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:2490:14: Error: Zero is not a valid statement label at (1)
+opac.f90:2490:15:
+
+              0.841133294515589E-02, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2490:30:
+
+              0.841133294515589E-02, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:2490:31:
+
+              0.841133294515589E-02, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2490:31:
+
+              0.841133294515589E-02, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:2509:34:
+
+            /0.112334152485423E-01, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:2510:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2510:14:
+
+             0.565505491673554E-02, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2510:29:
+
+             0.565505491673554E-02, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2510:30:
+
+             0.565505491673554E-02, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2510:30:
+
+             0.565505491673554E-02, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2517:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2517:14:
+
+             0.432350670809456E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2517:29:
+
+             0.432350670809456E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2517:30:
+
+             0.432350670809456E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2517:30:
+
+             0.432350670809456E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2524:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2524:14:
+
+             0.610008288910487E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2524:29:
+
+             0.610008288910487E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2524:30:
+
+             0.610008288910487E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2524:30:
+
+             0.610008288910487E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2531:11:
+
+            -0.829368808539319E-04, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:2593:35:
+
+             /0.887898350638988E-01, 
+                                   1
+Error: Syntax error in DATA statement at (1)
+opac.f90:2594:14: Error: Zero is not a valid statement label at (1)
+opac.f90:2594:15:
+
+              0.314253145824216E-01, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2594:30:
+
+              0.314253145824216E-01, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:2594:31:
+
+              0.314253145824216E-01, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2594:31:
+
+              0.314253145824216E-01, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:2601:12:
+
+             -0.648757583594739E-01, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:2608:14: Error: Zero is not a valid statement label at (1)
+opac.f90:2608:15:
+
+              0.111408530920425E+00, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2608:30:
+
+              0.111408530920425E+00, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:2608:31:
+
+              0.111408530920425E+00, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2608:31:
+
+              0.111408530920425E+00, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:2615:14: Error: Zero is not a valid statement label at (1)
+opac.f90:2615:15:
+
+              0.909104468384773E-02, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2615:30:
+
+              0.909104468384773E-02, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:2615:31:
+
+              0.909104468384773E-02, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2615:31:
+
+              0.909104468384773E-02, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:2635:34:
+
+            /0.111591386809632E+00, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:2636:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2636:14:
+
+             0.247770552328150E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2636:29:
+
+             0.247770552328150E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2636:30:
+
+             0.247770552328150E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2636:30:
+
+             0.247770552328150E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2643:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2643:14:
+
+             0.474702326098020E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2643:29:
+
+             0.474702326098020E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2643:30:
+
+             0.474702326098020E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2643:30:
+
+             0.474702326098020E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2650:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2650:14:
+
+             0.763039862991397E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2650:29:
+
+             0.763039862991397E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2650:30:
+
+             0.763039862991397E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2650:30:
+
+             0.763039862991397E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2657:11:
+
+            -0.154423150177907E+00, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:2718:35:
+
+             /0.277785544793629E+00, 
+                                   1
+Error: Syntax error in DATA statement at (1)
+opac.f90:2719:14: Error: Zero is not a valid statement label at (1)
+opac.f90:2719:15:
+
+              0.476159582199885E-01, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2719:30:
+
+              0.476159582199885E-01, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:2719:31:
+
+              0.476159582199885E-01, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2719:31:
+
+              0.476159582199885E-01, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:2726:12:
+
+             -0.471566068685918E-01, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:2733:14: Error: Zero is not a valid statement label at (1)
+opac.f90:2733:15:
+
+              0.120263771157534E+00, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2733:30:
+
+              0.120263771157534E+00, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:2733:31:
+
+              0.120263771157534E+00, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2733:31:
+
+              0.120263771157534E+00, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:2740:12:
+
+             -0.818191117398483E-02, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:2760:34:
+
+            /0.301945983086209E+00, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:2761:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2761:14:
+
+             0.364545274269526E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2761:29:
+
+             0.364545274269526E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2761:30:
+
+             0.364545274269526E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2761:30:
+
+             0.364545274269526E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2768:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2768:14:
+
+             0.933545520942711E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2768:29:
+
+             0.933545520942711E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2768:30:
+
+             0.933545520942711E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2768:30:
+
+             0.933545520942711E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2775:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2775:14:
+
+             0.802500034686812E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2775:29:
+
+             0.802500034686812E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2775:30:
+
+             0.802500034686812E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2775:30:
+
+             0.802500034686812E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2782:11:
+
+            -0.264197796694802E-01, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:2844:35:
+
+             /0.982198926271953E-01, 
+                                   1
+Error: Syntax error in DATA statement at (1)
+opac.f90:2845:14: Error: Zero is not a valid statement label at (1)
+opac.f90:2845:15:
+
+              0.118510085000898E-01, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2845:30:
+
+              0.118510085000898E-01, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:2845:31:
+
+              0.118510085000898E-01, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2845:31:
+
+              0.118510085000898E-01, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:2852:12:
+
+             -0.113616487488660E+00, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:2859:14: Error: Zero is not a valid statement label at (1)
+opac.f90:2859:15:
+
+              0.147358324017058E+00, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2859:30:
+
+              0.147358324017058E+00, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:2859:31:
+
+              0.147358324017058E+00, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2859:31:
+
+              0.147358324017058E+00, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:2866:12:
+
+             -0.688309740787277E-02, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:2887:34:
+
+            /0.109663478851364E+00, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:2888:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2888:14:
+
+             0.729622915836530E-02, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2888:29:
+
+             0.729622915836530E-02, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2888:30:
+
+             0.729622915836530E-02, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2888:30:
+
+             0.729622915836530E-02, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2895:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2895:14:
+
+             0.566447875027636E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2895:29:
+
+             0.566447875027636E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2895:30:
+
+             0.566447875027636E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2895:30:
+
+             0.566447875027636E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2902:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2902:14:
+
+             0.102575992311186E+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2902:29:
+
+             0.102575992311186E+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2902:30:
+
+             0.102575992311186E+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2902:30:
+
+             0.102575992311186E+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2909:13: Error: Zero is not a valid statement label at (1)
+opac.f90:2909:14:
+
+             0.211668231124049E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2909:29:
+
+             0.211668231124049E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:2909:30:
+
+             0.211668231124049E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2909:30:
+
+             0.211668231124049E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:2970:35:
+
+             /0.571961882492061E-02, 
+                                   1
+Error: Syntax error in DATA statement at (1)
+opac.f90:2971:14: Error: Zero is not a valid statement label at (1)
+opac.f90:2971:15:
+
+              0.467027871016589E-02, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2971:30:
+
+              0.467027871016589E-02, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:2971:31:
+
+              0.467027871016589E-02, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2971:31:
+
+              0.467027871016589E-02, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:2978:12:
+
+             -0.966934069009319E-01, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:2985:14: Error: Zero is not a valid statement label at (1)
+opac.f90:2985:15:
+
+              0.128291627860611E+00, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2985:30:
+
+              0.128291627860611E+00, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:2985:31:
+
+              0.128291627860611E+00, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:2985:31:
+
+              0.128291627860611E+00, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:2992:12:
+
+             -0.250033083691768E-02, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:3011:35:
+
+            / 0.193858771554221E-01, 
+                                   1
+Error: Syntax error in DATA statement at (1)
+opac.f90:3012:14: Error: Zero is not a valid statement label at (1)
+opac.f90:3012:15:
+
+              0.567895411217888E-02, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3012:30:
+
+              0.567895411217888E-02, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:3012:31:
+
+              0.567895411217888E-02, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3012:31:
+
+              0.567895411217888E-02, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:3019:14: Error: Zero is not a valid statement label at (1)
+opac.f90:3019:15:
+
+              0.546390379960075E-01, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3019:30:
+
+              0.546390379960075E-01, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:3019:31:
+
+              0.546390379960075E-01, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3019:31:
+
+              0.546390379960075E-01, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:3026:14: Error: Zero is not a valid statement label at (1)
+opac.f90:3026:15:
+
+              0.989466902884033E+01, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3026:30:
+
+              0.989466902884033E+01, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:3026:31:
+
+              0.989466902884033E+01, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3026:31:
+
+              0.989466902884033E+01, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:3033:14: Error: Zero is not a valid statement label at (1)
+opac.f90:3033:15:
+
+              0.904196525890367E-02, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3033:30:
+
+              0.904196525890367E-02, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:3033:31:
+
+              0.904196525890367E-02, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3033:31:
+
+              0.904196525890367E-02, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:3093:35:
+
+             /0.776645724385527E-02, 
+                                   1
+Error: Syntax error in DATA statement at (1)
+opac.f90:3094:14: Error: Zero is not a valid statement label at (1)
+opac.f90:3094:15:
+
+              0.662657430083621E-02, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3094:30:
+
+              0.662657430083621E-02, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:3094:31:
+
+              0.662657430083621E-02, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3094:31:
+
+              0.662657430083621E-02, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:3101:12:
+
+             -0.982256036580519E-01, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:3108:14: Error: Zero is not a valid statement label at (1)
+opac.f90:3108:15:
+
+              0.120554616636895E+00, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3108:30:
+
+              0.120554616636895E+00, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:3108:31:
+
+              0.120554616636895E+00, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3108:31:
+
+              0.120554616636895E+00, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:3115:12:
+
+             -0.240303268395795E-01, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:3134:34:
+
+            /0.279810562545530E-01, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:3135:13: Error: Zero is not a valid statement label at (1)
+opac.f90:3135:14:
+
+             0.104885901605351E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3135:29:
+
+             0.104885901605351E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:3135:30:
+
+             0.104885901605351E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3135:30:
+
+             0.104885901605351E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:3142:13: Error: Zero is not a valid statement label at (1)
+opac.f90:3142:14:
+
+             0.633425961606103E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3142:29:
+
+             0.633425961606103E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:3142:30:
+
+             0.633425961606103E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3142:30:
+
+             0.633425961606103E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:3149:13: Error: Zero is not a valid statement label at (1)
+opac.f90:3149:14:
+
+             0.114879683458859E+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3149:29:
+
+             0.114879683458859E+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:3149:30:
+
+             0.114879683458859E+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3149:30:
+
+             0.114879683458859E+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:3156:13: Error: Zero is not a valid statement label at (1)
+opac.f90:3156:14:
+
+             0.133652293166528E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3156:29:
+
+             0.133652293166528E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:3156:30:
+
+             0.133652293166528E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3156:30:
+
+             0.133652293166528E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:3216:35:
+
+             /0.574494938022800E-02, 
+                                   1
+Error: Syntax error in DATA statement at (1)
+opac.f90:3217:14: Error: Zero is not a valid statement label at (1)
+opac.f90:3217:15:
+
+              0.349839344699195E-02, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3217:30:
+
+              0.349839344699195E-02, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:3217:31:
+
+              0.349839344699195E-02, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3217:31:
+
+              0.349839344699195E-02, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:3224:12:
+
+             -0.320815807348939E-01, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:3231:14: Error: Zero is not a valid statement label at (1)
+opac.f90:3231:15:
+
+              0.994699809579733E-01, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3231:30:
+
+              0.994699809579733E-01, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:3231:31:
+
+              0.994699809579733E-01, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3231:31:
+
+              0.994699809579733E-01, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:3238:12:
+
+             -0.250943169769950E-02, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:3257:34:
+
+            /0.128869482389276E-01, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:3258:13: Error: Zero is not a valid statement label at (1)
+opac.f90:3258:14:
+
+             0.725910757183928E-02, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3258:29:
+
+             0.725910757183928E-02, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:3258:30:
+
+             0.725910757183928E-02, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3258:30:
+
+             0.725910757183928E-02, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:3265:13: Error: Zero is not a valid statement label at (1)
+opac.f90:3265:14:
+
+             0.413309417122390E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3265:29:
+
+             0.413309417122390E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:3265:30:
+
+             0.413309417122390E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3265:30:
+
+             0.413309417122390E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:3272:13: Error: Zero is not a valid statement label at (1)
+opac.f90:3272:14:
+
+             0.664544372119637E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3272:29:
+
+             0.664544372119637E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:3272:30:
+
+             0.664544372119637E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3272:30:
+
+             0.664544372119637E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:3279:11:
+
+            -0.531831149799181E+00, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:3339:35:
+
+             /0.601778757656690E-02, 
+                                   1
+Error: Syntax error in DATA statement at (1)
+opac.f90:3340:14: Error: Zero is not a valid statement label at (1)
+opac.f90:3340:15:
+
+              0.409097272925876E-02, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3340:30:
+
+              0.409097272925876E-02, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:3340:31:
+
+              0.409097272925876E-02, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3340:31:
+
+              0.409097272925876E-02, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:3347:12:
+
+             -0.483890387342808E-01, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:3354:14: Error: Zero is not a valid statement label at (1)
+opac.f90:3354:15:
+
+              0.101450295374589E+00, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3354:30:
+
+              0.101450295374589E+00, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:3354:31:
+
+              0.101450295374589E+00, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3354:31:
+
+              0.101450295374589E+00, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:3361:12:
+
+             -0.115532506830600E-01, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:3381:34:
+
+            /0.154425119227787E-01, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:3382:13: Error: Zero is not a valid statement label at (1)
+opac.f90:3382:14:
+
+             0.883586501144021E-02, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3382:29:
+
+             0.883586501144021E-02, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:3382:30:
+
+             0.883586501144021E-02, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3382:30:
+
+             0.883586501144021E-02, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:3389:13: Error: Zero is not a valid statement label at (1)
+opac.f90:3389:14:
+
+             0.521482016285399E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3389:29:
+
+             0.521482016285399E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:3389:30:
+
+             0.521482016285399E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3389:30:
+
+             0.521482016285399E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:3396:13: Error: Zero is not a valid statement label at (1)
+opac.f90:3396:14:
+
+             0.670254394966715E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3396:29:
+
+             0.670254394966715E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:3396:30:
+
+             0.670254394966715E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3396:30:
+
+             0.670254394966715E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:3403:11:
+
+            -0.411669467032501E-02, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:3465:35:
+
+             /0.241084737867738E+00, 
+                                   1
+Error: Syntax error in DATA statement at (1)
+opac.f90:3466:12:
+
+             -0.340209389403125E-02, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:3473:12:
+
+             -0.109455596095692E+00, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:3480:14: Error: Zero is not a valid statement label at (1)
+opac.f90:3480:15:
+
+              0.107619609550656E+00, & 
+               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3480:30:
+
+              0.107619609550656E+00, & 
+                              1
+Error: Too many digits in statement label at (1)
+opac.f90:3480:31:
+
+              0.107619609550656E+00, & 
+                               1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3480:31:
+
+              0.107619609550656E+00, & 
+                               1
+Error: Unclassifiable statement at (1)
+opac.f90:3487:12:
+
+             -0.687472517167857E-01, & 
+            1
+Error: Unclassifiable statement at (1)
+opac.f90:3506:34:
+
+            /0.248460261889448E+00, 
+                                  1
+Error: Syntax error in DATA statement at (1)
+opac.f90:3507:11:
+
+            -0.990219555706369E-03, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:3514:13: Error: Zero is not a valid statement label at (1)
+opac.f90:3514:14:
+
+             0.112649942798147E+00, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3514:29:
+
+             0.112649942798147E+00, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:3514:30:
+
+             0.112649942798147E+00, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3514:30:
+
+             0.112649942798147E+00, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:3522:11:
+
+            -0.441327484073404E-03, & 
+           1
+Error: Unclassifiable statement at (1)
+opac.f90:3528:13: Error: Zero is not a valid statement label at (1)
+opac.f90:3528:14:
+
+             0.138692387601316E-01, & 
+              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3528:29:
+
+             0.138692387601316E-01, & 
+                             1
+Error: Too many digits in statement label at (1)
+opac.f90:3528:30:
+
+             0.138692387601316E-01, & 
+                              1
+Error: Non-numeric character in statement label at (1)
+opac.f90:3528:30:
+
+             0.138692387601316E-01, & 
+                              1
+Error: Unclassifiable statement at (1)
+opac.f90:688:12:
+
+           AA = 0.5D0*(aKrL-aKrR) 
+            1
+Error: Symbol ‘aa’ at (1) has no IMPLICIT type
+opac.f90:681:37:
+
+         CALL gop(eG,rho_in,T2,aKg_ext) 
+                                     1
+Error: Symbol ‘akg_ext’ at (1) has no IMPLICIT type
+opac.f90:677:10:
+
+       aKrL = ((((eD(KK,1)*T1+eD(KK,2))*T1+eD(KK,3))*T1+eD(KK,4))*T1+ & 
+          1
+Error: Symbol ‘akrl’ at (1) has no IMPLICIT type
+opac.f90:682:10:
+
+       aKrR = aKg_ext 
+          1
+Error: Symbol ‘akrr’ at (1) has no IMPLICIT type
+opac.f90:689:12:
+
+           BB = 0.5D0*(aKrL+aKrR) 
+            1
+Error: Symbol ‘bb’ at (1) has no IMPLICIT type
+opac.f90:558:53:
+
+       DIMENSION ro(8),tt(8,4),T_ev(4),temp(8),T(5),dT(5) 
+                                                     1
+Error: Symbol ‘dt’ at (1) has no IMPLICIT type
+opac.f90:690:12:
+
+           FF = PI/2.0D0/dT(KK) 
+            1
+Error: Symbol ‘ff’ at (1) has no IMPLICIT type
+opac.f90:597:8:
+
+       PI = 4.0D0*DATAN(1.0D0) 
+        1
+Error: Symbol ‘pi’ at (1) has no IMPLICIT type
+opac.f90:558:18:
+
+       DIMENSION ro(8),tt(8,4),T_ev(4),temp(8),T(5),dT(5) 
+                  1
+Error: Symbol ‘ro’ at (1) has no IMPLICIT type
+opac.f90:558:47:
+
+       DIMENSION ro(8),tt(8,4),T_ev(4),temp(8),T(5),dT(5) 
+                                               1
+Error: Symbol ‘t’ at (1) has no IMPLICIT type
+opac.f90:671:10:
+
+         T1 = T(KK)-dT(KK) 
+          1
+Error: Symbol ‘t1’ at (1) has no IMPLICIT type
+opac.f90:672:10:
+
+         T2 = T(KK)+dT(KK) 
+          1
+Error: Symbol ‘t2’ at (1) has no IMPLICIT type
+opac.f90:558:34:
+
+       DIMENSION ro(8),tt(8,4),T_ev(4),temp(8),T(5),dT(5) 
+                                  1
+Error: Symbol ‘t_ev’ at (1) has no IMPLICIT type
+opac.f90:673:10:
+
+         TD = T_in-T(KK) 
+          1
+Error: Symbol ‘td’ at (1) has no IMPLICIT type
+opac.f90:558:42:
+
+       DIMENSION ro(8),tt(8,4),T_ev(4),temp(8),T(5),dT(5) 
+                                          1
+Error: Symbol ‘temp’ at (1) has no IMPLICIT type
+opac.f90:620:14:
+
+          tmax1 = DMAX1(T_ev(2), T_ev(3)) 
+              1
+Error: Symbol ‘tmax1’ at (1) has no IMPLICIT type
+opac.f90:621:14:
+
+          tmax2 = DMAX1(T_ev(3), T_ev(4)) 
+              1
+Error: Symbol ‘tmax2’ at (1) has no IMPLICIT type
+opac.f90:622:13:
+
+          tmin  = DMIN1(tmax1, tmax2) 
+             1
+Error: Symbol ‘tmin’ at (1) has no IMPLICIT type
+opac.f90:558:24:
+
+       DIMENSION ro(8),tt(8,4),T_ev(4),temp(8),T(5),dT(5) 
+                        1
+Error: Symbol ‘tt’ at (1) has no IMPLICIT type
