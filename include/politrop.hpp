@@ -36,10 +36,11 @@ struct adiabatikus : public PlanetBase
  };
 
 struct adiabatikus2 : public PlanetBase
+// radii parametrized politropic planet, somewhat believable parameters.
 {
     const double GRAVI_CONST = 6.674299999999999e-08;// in cgs -> cm3/gs2
-    double const K = 3.85e12*0.5; // maybe and for the Sun, probably not the perfect.
-    double gamma = 1/(4./3.);
+    double const K = 4.53e12*0.147;//3.85e12*0.5; // maybe and for the Sun, probably not the perfect.
+    double gamma = 1/(59./49.);//instead of 4/3 = gamma
     double rho;
 
 
