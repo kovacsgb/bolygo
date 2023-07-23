@@ -103,8 +103,69 @@ void ODE_solver::solv_step(double t)
     for(size_t i=0;i<yval.size();i++) yval[i] += step*dy[i];
 }
 
-
-
+void ODE_solver::solve_into_array(std::vector<std::vector<double>>& results,direction where)
+{
+    switch(where)
+    {
+        case direction::FORWARD: 
+            {double t=start;
+            yval = y0;
+            step=(end-start)/(static_cast<double>(results[0].size())-1);
+            // std::cerr << t << std::endl;
+            size_t i=0;
+            size_t j=0;
+            results[j++][i] = t;
+            for( auto&& val : yval)
+            {
+                results[j][i] = val;
+                j++;
+            }
+            j=0;
+            while (t <= end)
+            {
+                i++;
+                this->solv_step(t);
+                results[j++][i]=t;
+                for( auto&& val : yval) //later this should be moved out
+                {
+                        results[j][i] = val;
+                        j++;
+                }    
+                j=0;
+                t+=step;
+            }
+            break;}
+        case direction::BACKWARD:
+            {double t=start;
+            yval = y0;
+            step=(end-start)/(static_cast<double>(results[0].size())-1);
+            // std::cerr << t << std::endl;
+            size_t i=0;
+            size_t j=0;
+            results[j++][i] = t;
+            for( auto&& val : yval)
+            {
+                results[j][i] = val;
+                j++;
+            }
+            j=0;
+           // std::cerr << t << std::endl;
+            while (t >= end)
+            {
+                i++;
+                this->solv_step(t);
+                results[j++][i] = t;
+                for( auto&& val : yval)
+                {
+                    results[j][i] = val;
+                    j++;
+                }
+                j=0;
+                t+=step;
+            }
+            break;}
+    }
+}
 
 void Second_order::solv_step(double t)
 {

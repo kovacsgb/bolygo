@@ -117,5 +117,35 @@ double PlanetMaker_Base::calculateM_env(Doub M_core, Doub rho_neb, Doub c_s)
 Envelope PlanetMaker_Base::BuildEnvelope(Doub M_core, Doub M_env, Doub rho_neb, Doub c_s)
 {
     Doub R_core{std::pow((3*M_core / (4.* M_PI*5.5)),1./3.)};
-    return Envelope{};
+    Doub R_out{GRAVI_CONST * (M_core+M_env) / (c_s*c_s)};
+    std::vector<std::vector<double>> y_vec{std::vector<double>(1000),std::vector<double>(1000),std::vector<double>(1000)};
+    PolitropParameters SetupParams;
+    SetupParams.c_s=c_s;
+    SetupParams.M_core=M_core;
+    SetupParams.rho_neb=rho_neb*c_s*c_s;
+    InitPolitrop InitParams{rho_neb,0,0};
+    Planet->setParams(&InitParams);
+    InitFunc->setup(&SetupParams);
+    std::vector<double> y{rho_neb,M_env}, dy(2);
+    (*InitFunc)(y,dy,&R_out);
+    Second_order chosen_solver(static_cast<Function&>(*Planet),dy,R_out,R_core,(R_out-R_core)/1000);
+    chosen_solver.solve_into_array(y_vec,ODE_solver::direction::BACKWARD);
+    std::vector<double> radii = y_vec[0];
+    std::vector<double> pressure = y_vec[1];
+    std::vector<double> mass = y_vec[2];
+    std::vector<double> rho(mass.size());
+    std::vector<double> Temperature(mass.size());
+    
+    //rho = std::pow( P / K, gamma);
+    std::transform(pressure.cbegin(),pressure.cend(),rho.begin(),
+     [K=static_cast<adiabatikus2*>(Planet.get())->K,
+     gam=static_cast<adiabatikus2*>(Planet.get())->gamma](double P){
+        return std::pow(P/K,gam);});
+    std::transform(pressure.cbegin(),pressure.cend(),Temperature.begin(),
+     [K=static_cast<adiabatikus2*>(Planet.get())->K,
+     gam=static_cast<adiabatikus2*>(Planet.get())->gamma](double P){
+        return std::pow(P,1-gam)*std::pow(K,gam)*1.28/8.31432;});
+
+
+    return Envelope{radii,mass,pressure,Temperature,rho};
 }

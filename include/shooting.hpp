@@ -43,9 +43,7 @@ class ODE_solver{
     std::vector<double> operator()();
     std::vector<double> operator()(std::vector<double> new_y0);
     std::vector<double> operator()(direction where);
-
-    
-
+    void solve_into_array(std::vector<std::vector<double>> &results, direction where);
     
 
 };

@@ -1,0 +1,11 @@
+*.png
+valami*
+Program
+dump
+.vscode
+Fxtest
+log
+bolygo
+*.o
+Envelope.dat
+

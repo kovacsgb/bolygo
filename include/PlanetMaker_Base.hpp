@@ -1,5 +1,6 @@
 #include "shooting.hpp"
 #include <memory>
+#include <algorithm>
 
 typedef double Doub;
 
